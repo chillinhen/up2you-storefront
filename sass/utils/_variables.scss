@@ -1,0 +1,35 @@
+// Some common variables and mixins to get you started.
+// Variables allow you to re-use colors, sizes, and other values without repeating
+// yourself. This means that changes that should be small, such as tweaking the
+// coloring or the sizing, can be done in one place, not all over the stylesheet.
+$foo: red;
+
+
+$base-font: 		"Josefin Sans", arial, helvetica, sans-serif !important;
+$header-font: 		"Cardo", georgia, times new roman, serif !important;
+$base-font-size:        16px;
+
+// base color scheme
+$color-primary:         #d14491;
+$body-background: 	#ffffff;
+$color_body: 		#333333;
+$color_links: 		$color-primary;
+$color_border:		rgba(0,0,0,0.1);
+$color-light-grey:      #ababab;
+$color-dark-grey:       #44484e;
+$error: 			#e2401c;
+$success: 			#0f834d;
+$info: 				#3D9CD2;
+$vspacing: 			1.618em;
+
+$susy: (
+	columns: 12,
+	gutters: 1,
+	math: fluid,
+	output: float,
+	gutter-position: after,
+
+	use-custom: (
+		box-sizing: false
+	)
+);

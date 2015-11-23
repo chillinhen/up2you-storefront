@@ -1,0 +1,57 @@
+/**
+ * General Layout
+ */
+
+@media screen and (min-width: 768px) {
+    .site-header {
+
+        .site-branding,
+        .site-logo-anchor,
+        .site-logo-link {
+            @include span(12 of 12);
+            padding:1.4em 0;
+            img {
+                height: 100px;
+                width: auto;
+                margin:0 auto;
+                max-width: none;
+                max-height: 100%;
+            }
+        }
+    }
+    .woocommerce-active {
+        .site-header {
+            .site-header-badge{
+               position: fixed;
+               top:0;
+               right:0;
+               @include container(10em);
+               display:none; /** Todo styling ***/
+            }
+            .secondary-navigation {
+                @include span(2 of 12); 
+            }
+            .site-search {
+                @include span(1 of 12);
+                clear: none;
+            }
+            .main-navigation {
+                @include span(9 of 12);
+                clear: none;
+            }
+            .site-header-cart {
+                @include span(last 3 of 12);
+                margin-bottom: 0;
+                padding-top: 0;
+            }
+
+        }
+        .site-branding,
+        .site-search,
+        .site-header-cart,
+        .site-logo-anchor,
+        .site-logo-link {
+            margin-bottom: 0;
+        }
+    }
+}
