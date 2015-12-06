@@ -7,7 +7,23 @@
         clear: both;
     }
 }
-
+%reset{
+    margin:0 !important;
+    padding:0 !important;
+}
+@mixin check-list ($size,$pos, $pd){
+    background: transparent url('../img/check.svg') no-repeat $pos / $size;
+    padding: $pd;
+}
+@mixin icon-style($cont){
+    &:before {
+        content:$cont;
+        font-family: "FontAwesome";
+        margin-right: .53em;
+        display: inline-block;
+        opacity: 0.35;
+    }
+}
 @mixin hoverActiveFocus() {
     &:hover, &:active, &:focus {
         @content;
@@ -69,18 +85,39 @@
         }
     }
 }
-
-/*** Show Temp Styles ***/
-@mixin foo ($width,$col){
-    border:$width solid $col;
+@mixin circle($scale,$color){
+    height:$scale;
+    width:$scale;
+    -webkit-border-radius: $scale/2;
+    border-radius: $scale/2;
+    background:$color;
 }
-
-/*** Icon ***/
-@mixin icon-style ($cnt, $pd-ri, $op, $mg-le, $size) {
-    font-family: 'FontAwesome';
-    content: $cnt;
-    padding-right: $pd-ri;
-    opacity: $op;
-    margin-left:$mg-le;
-    font-size:$size;
+@mixin border-style($width,$style,$color){
+    border-width: $width;
+    border-style: $style;
+    border-color:$color;
+}
+@mixin img-shadow-inset{
+-webkit-box-shadow:inset 1px 1px 5px 0 rgba(0,0,0,.5);
+box-shadow:inset 1px 1px 5px 0 rgba(0,0,0,.5);
+}
+@mixin img-shadow{
+    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,.2);
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.2);
+}
+@mixin bogen($img-url){
+    position: absolute;
+    content:'';
+    display:block;
+    background:transparent $img-url no-repeat center center / cover;
+    width:300px;
+    height:60px;
+    z-index: 10;
+}
+@mixin alpha-background-color($color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  background-color: $solid-color;
+  background-color: $color;
 }

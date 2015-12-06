@@ -8,24 +8,27 @@
  */
 ?>
 
-		</div><!-- .col-full -->
-	</div><!-- #content -->
-
 	<?php do_action( 'storefront_before_footer' ); ?>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="col-full">
+<footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="col-full">
 
-			<?php
-			/**
-                        * @hooked storefront_social_icons - 0
-			 * @hooked storefront_footer_widgets - 10
-			 * @hooked storefront_credit - 20
-			 */
-			do_action( 'storefront_footer' ); ?>
+        <?php
+        /**
+         * @hooked storefront_footer_widgets - 10
+         * @hooked storefront_credit - 20 -> Todo:move credits
+         */
+        do_action('storefront_footer');
+        ?>
 
-		</div><!-- .col-full -->
-	</footer><!-- #colophon -->
+    </div><!-- .col-full -->
+    <div class="footer-bottom">
+        <div class="col-full">
+            <!-- footer-links --><?php wp_nav_menu(array('theme_location' => 'footer-links')); ?>
+            <?php do_action('storefront_child_footer'); ?>
+        </div>
+    </div>
+</footer><!-- #colophon -->
 
 	<?php do_action( 'storefront_after_footer' ); ?>
 

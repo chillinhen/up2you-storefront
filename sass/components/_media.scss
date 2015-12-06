@@ -20,17 +20,32 @@
 .wp-caption {
 	margin-bottom: $vspacing;
 	max-width: 100%;
+        padding:1em;
+        @include border-style(1px,solid,#eee);
+        background:white;
+        @include img-shadow;
 
 	img[class*="wp-image-"] {
 		display: block;
 		margin: 0 auto;
+                @include img-shadow-inset;
 	}
 	.wp-caption-text {
 		text-align: left;
-		font-style: italic;
-		border-bottom: 2px solid $color_border;
+		font-family: 'verveine', sans-serif;
+                color:$color_primary;
+		border-bottom: 0;
 		padding: 1em 0;
+                text-align: center;
+                line-height: 1;
+                font-size: 2em;
 	}
+        &.alignleft{
+            margin-right: $vspacing;
+        }
+        &.alignright{
+            margin-left: $vspacing;
+        }
 }
 
 /**

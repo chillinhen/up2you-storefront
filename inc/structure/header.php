@@ -35,10 +35,9 @@ if ( ! function_exists( 'storefront_site_branding' ) ) {
 		} else { ?>
 			<div class="site-branding">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<!--ToDo: neuer Platz für die Description -->
-                                    <?php #if ( '' != get_bloginfo( 'description' ) ) { ?>
-					<!--<p class="site-description"><?php #echo bloginfo( 'description' ); ?></p>-->
-				<?php #} ?>
+				<?php if ( '' != get_bloginfo( 'description' ) ) { ?>
+					<p class="site-description"><?php echo bloginfo( 'description' ); ?></p>
+				<?php } ?>
 			</div>
 		<?php }
 	}
@@ -82,7 +81,6 @@ if ( ! function_exists( 'storefront_secondary_navigation' ) ) {
 	 */
 	function storefront_secondary_navigation() {
 		?>
-                <div id="secondary">
 		<nav class="secondary-navigation" role="navigation" aria-label="<?php _e( 'Secondary Navigation', 'storefront' ); ?>">
 			<?php
 				wp_nav_menu(
@@ -92,9 +90,7 @@ if ( ! function_exists( 'storefront_secondary_navigation' ) ) {
 					)
 				);
 			?>
-		</nav><!-- #site-navigation -->?>
-                
-                </div>
+		</nav><!-- #site-navigation -->
 		<?php
 	}
 }

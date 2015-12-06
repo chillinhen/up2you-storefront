@@ -1,0 +1,36 @@
+@import 'bourbon/_bourbon';
+@import "../bower_components/susy/sass/susy";
+
+// Utilities
+// Sass tools and helpers used across the project.
+@import 'utils/_variables';
+@import 'utils/_mixins';
+
+// Vendors
+// External libraries and frameworks
+@import 'vendors/normalize';
+
+// Base
+// Holds what we might call the boilerplate code for the project.
+@import 'base/_base';
+@import 'base/_typography';
+
+// Layout
+// Contains everything that takes part in laying out the theme
+@import 'layout/layout';
+
+// Components
+// For smaller, less global components that do not belong in /layout
+@import 'components/forms';
+@import 'components/menu';
+@import 'components/content';
+@import 'components/post-formats';
+@import 'components/media';
+@import 'components/pagination';
+@import 'components/comments';
+@import 'components/widgets';
+@import 'components/infinite-scroll';
+@import 'components/404';
+
+//shame for badly coded and debugged
+@import '_shame';

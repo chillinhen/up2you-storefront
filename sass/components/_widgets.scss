@@ -4,6 +4,7 @@
 
 .widget {
 	margin: 0 0 3.631em;
+        @extend %reset;
 
 	select {
 		max-width: 100%;
@@ -129,7 +130,7 @@
 	ul {
 		li {
 			&:before {
-				content: "\f0f6";
+				content: " ";
 			}
 		}
 

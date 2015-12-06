@@ -1,6 +1,19 @@
 /**
  * Global styles
  */
+html,
+body {
+  height: 100%;
+}
+/* Wrapper for page content to push down footer */
+#page {
+  @include display(flex);
+  min-height: 100vh;
+  @include flex-direction(column);
+  > #content{
+      @include flex(1);
+  }
+}
 
 * {
 	box-sizing: border-box;
@@ -18,8 +31,8 @@ body {
  * Header
  */
 .site-header {
-	background-color: $body-background;
-	padding-top: 0;
+	background-color: #fff;
+	padding-top: 2.618em;
 	color: #9aa0a7;
 	background-position: center center;
 	position: relative;
@@ -30,7 +43,7 @@ body {
 		display: block;
 
 		img {
-			max-height: 100% !important;
+			max-height: 2.618em;
 			width: auto;
 		}
 	}
@@ -38,23 +51,40 @@ body {
 	.site-branding,
 	.site-logo-anchor,
 	.site-logo-link {
-            margin-bottom: 0;
-                
+		margin-bottom: 1.618em;
 	}
-
 
 	.widget {
-		margin-bottom: 0;
+		margin-bottom: 0 !important;
 	}
 }
-/*** Temp ***/
-.site-banner{
-    height:535px;
-    background-size: cover;
-    background-repeat: no-repeat;
+.site-header{
+    .col-left{
+        @include span(5 of 12);
+        .site-navigation{
+            @include container;
+            width:100%;
+        }
+        padding-top:12px;
+    }
+    .col-center{
+        @include span(2 of 12);
+    }
+    .col-right{
+        @include span(last 5 of 12);
+        padding-top:20px;
+    }
 }
-/*** end Temp ***/
-
+.banner{
+    min-height:300px;
+    h1{
+        @include span(6 of 12);
+    }
+    .claim-list{
+        @include span(5 of 12);
+    }
+    
+}
 .home.blog,
 .home.page:not(.page-template-template-homepage),
 .home.post-type-archive-product {
@@ -119,16 +149,23 @@ body {
  */
 .site-footer {
 	background-color: #f3f3f3;
-	color: $color_body + #333;
-	padding: 1.618em 0;
-
+	color: $color_body;
+	
+        @extend %reset;
+        padding-top:$vspacing;
+        padding-bottom:0 !important;
 	h1,
 	h2,
 	h3,
 	h4,
 	h5,
 	h6 {
-		color: $color_body + #222;
+		color: lighten($color_body,30%);
+                margin-bottom:$vspacing/2 !important;
+                font-style: italic;
+                letter-spacing:.05em;
+                line-height: 1.4;
+                
 	}
 
 	a:not(.button) {
@@ -136,8 +173,21 @@ body {
 	}
 }
 
+.menu-footerlinks-container{
+    max-width:40%;
+    float:left;
+    ul{
+        list-style: none;
+        li {
+            float: left;
+            display:inline-block;
+        }
+    }
+}
 .site-info {
-	padding: 2.618em 0;
+    @extend %reset;
+    max-width:60%;
+    float:right;
 }
 
 /**
@@ -195,7 +245,7 @@ body {
 .entry-content,
 .comment-content,
 .site-header,
-.site-content,
+/*.site-content,*/
 .site-footer {
 	@extend %clearfix;
 }
