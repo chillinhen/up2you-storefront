@@ -306,23 +306,5 @@
             @include bogen('../img/bogen.svg'); 
         }
     }
-    
-    .wp-caption.alignleft{
-        @include transform(rotate(-8deg));
-        &:before {
-            @include transform(scale(-1,1) rotate(24deg));
-            top:50%;
-            right:-250px;
-        }
-        
-    }
-    .wp-caption.alignright{
-        @include transform(rotate(5deg));
-                &:before {
-            @include transform(rotate(2deg));
-            top:90%;
-            left:-260px;
-        }
-    }
 }
 

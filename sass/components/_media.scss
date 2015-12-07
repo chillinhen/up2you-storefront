@@ -18,34 +18,46 @@
  * Captions
  */
 .wp-caption {
-	margin-bottom: $vspacing;
-	max-width: 100%;
-        padding:1em;
-        @include border-style(1px,solid,#eee);
-        background:white;
-        @include img-shadow;
+    margin-bottom: $vspacing;
+    max-width: 100%;
+    padding:1em;
+    @include border-style(1px,solid,#eee);
+    background:white;
+    @include img-shadow;
 
-	img[class*="wp-image-"] {
-		display: block;
-		margin: 0 auto;
-                @include img-shadow-inset;
-	}
-	.wp-caption-text {
-		text-align: left;
-		font-family: $handwritten-font;
-                color:$color_primary;
-		border-bottom: 0;
-		padding: 1em 0;
-                text-align: center;
-                line-height: 1;
-                font-size: 2em;
-	}
-        &.alignleft{
-            margin-right: $vspacing;
+    img[class*="wp-image-"] {
+        display: block;
+        margin: 0 auto;
+        @include img-shadow-inset;
+    }
+    .wp-caption-text {
+        text-align: left;
+        font-family: $handwritten-font;
+        color:$color_primary;
+        border-bottom: 0;
+        padding: 1em 0;
+        text-align: center;
+        line-height: 1;
+        font-size: 2em;
+    }
+    &.alignleft{
+        margin-right: $vspacing;
+        @include transform(rotate(-8deg));
+        &:before {
+            @include transform(scale(-1,1) rotate(24deg));
+            top:50%;
+            right:-250px;
         }
-        &.alignright{
-            margin-left: $vspacing;
+    }
+    &.alignright{
+        margin-left: $vspacing;
+        @include transform(rotate(5deg));
+        &:before {
+            @include transform(rotate(2deg));
+            top:90%;
+            left:-260px;
         }
+    }
 }
 
 /**

@@ -13,7 +13,7 @@ endif; ?></h2>
         </div>
     </header>
     <section class="col-full">
-        <?php if (has_post_thumbnail()) :?>   
+        <?php if (has_post_thumbnail() || get_field('preis') ) :?>   
             <aside class="thumbnail">
                 <?php the_post_thumbnail(); ?>
                  <?php if (get_field('preis')) : ?>
@@ -22,8 +22,24 @@ endif; ?></h2>
             </aside>
         <?php endif; ?>
          
-        <div class="post_content"><?php the_content(); ?>
-
+        <div class="post_content">
+            
+            <?php the_content(); ?>
+            <?php if (get_field('checklist')) : ?>
+            <div class="check-list">
+                <?php the_field('checklist');?>
+            </div>
+            <?php endif; ?>
+            <?php if (get_field('motivationlist')) :?>
+            <div class="motivation-list">
+                <?php the_field('motivationlist');?>
+            </div>
+            <?php endif; ?>
+            <?php if (get_field('shoppinglist')) :?>
+            <div class="shopping-list">
+                <?php the_field('shoppinglist');?>
+            </div>
+            <?php endif; ?>
             <?php if (get_field('link') & get_field('linktext')) : ?>
                 <a class="button" href="<?php the_field('link') ?>"><?php the_field('linktext') ?></a>
             </div>

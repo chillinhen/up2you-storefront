@@ -172,9 +172,7 @@ article{
     ul{
         list-style: none;
         li{
-            &:before{
-                @include default-list;
-            }
+            @include default-list;
         }
     }
     [class*="list"]{
@@ -182,9 +180,23 @@ article{
             @extend %reset;
         }
         li {
-            @include check-list (auto 20px, 2px 5px, 0 0 0 40px);
+            @include check-list (url('../img/check.svg'),auto 20px, 2px 5px, 0 0 0 40px);
             min-height: 30px;
             margin-bottom: 1em;
+        }
+    }
+    .shopping-list{
+        background-color: $color-primary;
+        color:white;
+        padding:1em;
+        margin:1em 0;
+        font-weight:bold;
+        border:0;
+        li {
+            @include check-list (url('../img/check-white.svg'),auto 20px, 2px 5px, 0 0 0 40px);
+        }
+        > *{
+            color:inherit;
         }
     }
 }
@@ -196,13 +208,16 @@ article{
     @include circle(175px,transparent);
     overflow:hidden;
     background:transparent url('../img/badge.svg') no-repeat center center / 100%;
-    font-size: 3em !important;
+    font-size: 2em;
     text-align: center;
     padding:12%;
     color:white ;
     font-family: $handwritten-font;
     > a{
         color:inherit !important;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
     }
 }
 .parallax{
@@ -254,7 +269,7 @@ article{
         }
         li {
             list-style: none;
-            @include check-list (auto 1em, 2px 5px, 0 0 0 40px);
+            @include check-list (url('../img/check.svg'), auto 1em, 2px 5px, 0 0 0 40px);
             font-size: 1.2em;
             line-height: 1.2;
             margin-bottom: 1em;
@@ -306,7 +321,7 @@ article.programme{
             padding:0 2em 0 0;
             li{
             list-style: none;
-            @include check-list (auto 20px, 2px 5px, 0 0 0 40px);
+            @include check-list (url('../img/check.svg'),auto 20px, 2px 5px, 0 0 0 40px);
             min-height: 30px;
             margin-bottom: 1em;
             }
@@ -319,6 +334,8 @@ article.programme{
         left: auto;
         bottom: -25%;
         right: 0;
+        font-size: 28px;
+        font-weight:bold;
         @include transform(rotate(8deg));
     }
     &:first-child{
@@ -329,7 +346,7 @@ article.programme{
             bottom: -20% !important;
             left: -20% !important;
             @include transform(rotate(-12deg));
-            font-size: 200%; 
+            font-size: 36px;
         }
     }
     &:last-child{
@@ -340,6 +357,7 @@ article.programme{
             left: 50% !important;
             bottom: -20% !important;
             @include transform(rotate(3deg));
+            font-size: 1.6em;
         }
     }
 }
@@ -354,7 +372,7 @@ article.programme{
        
         .post_content{
             @include span(full);
-            ul {
+            [class*="list"] {
                 margin-bottom:2em !important;
                 padding-bottom: 1em !important;
                 border-bottom: 1px dotted $color-light-grey;
