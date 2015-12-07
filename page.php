@@ -19,7 +19,7 @@ do_action('storefront_before_content');
     <?php get_template_part('partials/message', 'first'); ?>
 
     <main id="main" class="site-main" role="main">
-        <div class="col-full">
+       
             <div id="primary" class="content-area">
                 <?php while (have_posts()) : the_post(); ?>
 
@@ -62,7 +62,6 @@ do_action('storefront_before_content');
 
     </main><!-- #main -->
 </div><!-- #primary --> 
-</div>
 <?php get_template_part('partials/message', 'second'); ?>
 </div><!-- #content -->
 <?php get_footer(); ?>

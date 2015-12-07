@@ -45,15 +45,28 @@ h5,
 h6{
     font-family: $header-font;
     clear: both;
-    font-weight: 700;
+    font-weight: 500;
     margin: 0 0 .618em;
     color: darken( $color_body, 20% );
+    .badge &{
+       color: white !important; 
+    }
+    font-style: italic;
+    .full-size-bar &{
+        font-style: normal;
+    }
 }
 #site-navigation a{
     font-family: $header-font!important;
-    font-size: 1.2em;
+    font-size: 18px;
     font-style: italic;
-    margin-left: 1.4em;
+    margin-left: 1em;
+}
+.thumbnails header *, [id*="message"] *{
+    font-family: $handwritten-font;
+    color:white !important;
+    line-height: 1;
+    font-weight:normal;
 }
 h1,
 .alpha {
@@ -223,7 +236,7 @@ img {
 a {
     color: $color_links;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: normal;
 
     &:focus {
         outline: 1px solid $color_links;
@@ -233,9 +246,3 @@ a {
 // Wait, what..?
 // Don't look at the following, and definitely dont look at
 // inc/functions/extras.php for more information...
-.thumbnails header *, [id*="message"] *{
-    font-family: "verveine", sans-serif !important;
-    color:white !important;
-    line-height: 1;
-    font-weight:normal;
-}

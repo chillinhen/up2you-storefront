@@ -20,7 +20,7 @@
 .site-footer:after, .footer-widgets[class*="col-"] .social-media:after, .gallery:after {
   clear: both; }
 
-.site-footer, .site-info, #story, article.panels section .excerpt ul, .widget {
+.site-footer, .site-info, #story, article [class*="list"] ul, .widget {
   margin: 0 !important;
   padding: 0 !important; }
 
@@ -513,7 +513,14 @@ body {
  * Main content area
  */
 .site-main {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 2.618em; }
+  .site-main:after {
+    content: " ";
+    display: block;
+    clear: both; }
 
 .site-content {
   outline: none; }
@@ -535,10 +542,10 @@ body {
   .site-footer h4,
   .site-footer h5,
   .site-footer h6 {
-    color: gray;
+    color: #5f5f5f;
     margin-bottom: 0.809em !important;
     font-style: italic;
-    letter-spacing: .05em;
+    font-weight: 300;
     line-height: 1.4; }
   .site-footer a:not(.button) {
     color: #d14491; }
@@ -683,17 +690,38 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Cardo", georgia, times new roman, serif;
+  font-family: "Merriweather", georgia, times new roman, serif;
   clear: both;
-  font-weight: 700;
+  font-weight: 500;
   margin: 0 0 .618em;
-  color: black; }
+  color: black;
+  font-style: italic; }
+  .badge h1, .badge
+  h2, .badge
+  h3, .badge
+  h4, .badge
+  h5, .badge
+  h6 {
+    color: white !important; }
+  .full-size-bar h1, .full-size-bar
+  h2, .full-size-bar
+  h3, .full-size-bar
+  h4, .full-size-bar
+  h5, .full-size-bar
+  h6 {
+    font-style: normal; }
 
 #site-navigation a {
-  font-family: "Cardo", georgia, times new roman, serif !important;
-  font-size: 1.2em;
+  font-family: "Merriweather", georgia, times new roman, serif !important;
+  font-size: 18px;
   font-style: italic;
-  margin-left: 1.4em; }
+  margin-left: 1em; }
+
+.thumbnails header *, [id*="message"] * {
+  font-family: "Covered By Your Grace", cursive;
+  color: white !important;
+  line-height: 1;
+  font-weight: normal; }
 
 h1,
 .alpha {
@@ -833,15 +861,9 @@ img {
 a {
   color: #d14491;
   text-decoration: none;
-  font-weight: 700; }
+  font-weight: normal; }
   a:focus {
     outline: 1px solid #d14491; }
-
-.thumbnails header *, [id*="message"] * {
-  font-family: "verveine", sans-serif !important;
-  color: white !important;
-  line-height: 1;
-  font-weight: normal; }
 
 /**
  * General Layout
@@ -932,6 +954,9 @@ a {
     width: 74.46809%;
     float: left;
     margin-right: 2.12766%; }
+    .woocommerce-active .content-area {
+      float: none !important;
+      width: 100% !important; }
 
   .widget-area {
     width: 23.40426%;
@@ -1685,7 +1710,7 @@ fieldset {
   text-align: center;
   position: relative;
   padding: 1em 0; }
-  .home .full-size-bar {
+  body.home .full-size-bar, body.single-programme .full-size-bar {
     margin-bottom: 5em; }
   .full-size-bar h2, .full-size-bar p {
     margin: 0;
@@ -1763,59 +1788,22 @@ fieldset {
     flex: 1;
     margin: 0 1em !important; }
 
+article [class*="list"] ul {
+  list-style: none; }
+article [class*="list"] li {
+  background: transparent url("../img/check.svg") no-repeat 2px 5px/auto 20px;
+  padding: 0 0 0 40px;
+  min-height: 30px;
+  margin-bottom: 1em; }
+
 article.panels > header {
   position: relative;
   margin-bottom: 8em; }
-  article.panels > header > .badge {
-    display: -webkit-box;
-    display: -moz-box;
-    display: box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    box-align: center;
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    -ms-align-items: center;
-    -o-align-items: center;
-    align-items: center;
-    -ms-flex-align: center;
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    box-pack: center;
-    -webkit-justify-content: center;
-    -moz-justify-content: center;
-    -ms-justify-content: center;
-    -o-justify-content: center;
-    justify-content: center;
-    -ms-flex-pack: center;
-    height: 175px;
-    width: 175px;
-    -webkit-border-radius: 87.5px;
-    border-radius: 87.5px;
-    background: transparent;
-    position: absolute;
-    bottom: -30%;
-    left: 20%;
-    z-index: 10;
-    overflow: hidden;
-    background: transparent url("../img/badge.svg") no-repeat center center/100%; }
-    article.panels > header > .badge > a {
-      font-size: 145%;
-      text-align: center;
-      padding: 20%; }
 article.panels section .excerpt {
   padding: 0 2em 0 0; }
-  article.panels section .excerpt ul {
-    list-style: none; }
-  article.panels section .excerpt li {
-    background: transparent url("../img/check.svg") no-repeat 2px 5px/auto 20px;
-    padding: 0 0 0 40px;
-    min-height: 30px;
-    margin-bottom: 1em; }
+article.panels .badge {
+  position: absolute;
+  z-index: 10; }
 article.panels:first-child header {
   margin-bottom: 5em; }
 article.panels:first-child .badge {
@@ -1838,6 +1826,46 @@ article.panels:last-child .badge {
   -ms-transform: rotate(3deg);
   -o-transform: rotate(3deg);
   transform: rotate(3deg); }
+
+.badge {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  height: 175px;
+  width: 175px;
+  -webkit-border-radius: 87.5px;
+  border-radius: 87.5px;
+  background: transparent;
+  overflow: hidden;
+  background: transparent url("../img/badge.svg") no-repeat center center/100%; }
+  .badge > * {
+    font-size: 145% !important;
+    text-align: center;
+    padding: 20%;
+    color: white !important;
+    font-family: "Covered By Your Grace", cursive; }
 
 .parallax {
   background-attachment: fixed;
@@ -1944,6 +1972,40 @@ article.panels:last-child .badge {
     width: 300px;
     height: 60px;
     z-index: 10; }
+
+.single.single-prgramme .widget-area {
+  display: none;
+  /** Shame***/ }
+.single article.programme .post_content {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0; }
+  .single article.programme .post_content ul {
+    margin-bottom: 2em !important;
+    padding-bottom: 1em !important;
+    border-bottom: 1px dotted #ababab; }
+.single article.programme .thumbnail {
+  position: relative;
+  width: 23.40426%;
+  float: left;
+  margin-right: 2.12766%;
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  transform: rotate(-5deg); }
+  .single article.programme .thumbnail ~ .post_content {
+    width: 74.46809%;
+    float: right;
+    margin-right: 0; }
+.single article.programme .badge {
+  float: right;
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  transform: rotate(-5deg); }
 
 /**
  * Post Formats

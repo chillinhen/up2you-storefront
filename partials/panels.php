@@ -1,4 +1,4 @@
-<article id="thumb-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
+<article id="thumb-<?php the_ID(); ?>" <?php post_class('panels'); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
     <header>
         <?php
         if (has_post_thumbnail()) :

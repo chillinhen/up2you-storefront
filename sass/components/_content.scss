@@ -3,117 +3,117 @@
  */
 
 .sticky {
-	.entry-title {
-		&:before {
-			font-family: "FontAwesome";
-			font-weight: 400;
-			margin-right: .53em;
-			content: "\f08d";
-		}
-	}
+    .entry-title {
+        &:before {
+            font-family: "FontAwesome";
+            font-weight: 400;
+            margin-right: .53em;
+            content: "\f08d";
+        }
+    }
 }
 
 .hentry {
-        
-	margin: 0 0 0;
-	padding-bottom: 0;
-	border-bottom: 0;
-	.wp-post-image {
-		margin-bottom: 1.618em;
-	}
 
-	.entry-header {
-		border-bottom: 3px solid $color_body;
-		margin-bottom: 3.631em;
+    margin: 0 0 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+    .wp-post-image {
+        margin-bottom: 1.618em;
+    }
 
-		h1 {
-			border-bottom: 1px solid $color_border;
-			padding-bottom: .618em;
-			margin-bottom: 3px;
-		}
+    .entry-header {
+        border-bottom: 3px solid $color_body;
+        margin-bottom: 3.631em;
 
-		.posted-on,
-		.byline {
-			font-size: .857em;
-		}
-	}
-
-	.entry-meta {
-		a {
-			border-bottom: 1px solid $color_border;
-
-			&:hover {
-				border-bottom-color: rgba(0,0,0,0.2);
-			}
-		}
-	}
-        
-        .page-template-template-fullwidth & .wpcf7{
-            @include span(last 4 of 12);
-            margin-left:2em;
+        h1 {
+            border-bottom: 1px solid $color_border;
+            padding-bottom: .618em;
+            margin-bottom: 3px;
         }
+
+        .posted-on,
+        .byline {
+            font-size: .857em;
+        }
+    }
+
+    .entry-meta {
+        a {
+            border-bottom: 1px solid $color_border;
+
+            &:hover {
+                border-bottom-color: rgba(0,0,0,0.2);
+            }
+        }
+    }
+
+    .page-template-template-fullwidth & .wpcf7{
+        @include span(last 4 of 12);
+        margin-left:2em;
+    }
 }
 .byline,
 .updated:not(.published) {
-	display: none;
+    display: none;
 }
 .single, .group-blog {
-	.byline {
-		display: inline;
-	}
+    .byline {
+        display: inline;
+    }
 }
 .page-links {
-	clear: both;
-	margin: 0 0 $vspacing;
+    clear: both;
+    margin: 0 0 $vspacing;
 }
 
 .cat-links,
 .tags-links,
 .comments-link,
 .edit-link {
-	display: block;
-	margin-bottom: 1em;
+    display: block;
+    margin-bottom: 1em;
 
-	&:before {
-		content: "\f114";
-		font-family: "FontAwesome";
-		margin-right: .53em;
-		display: inline-block;
-		width: 1em;
-	}
+    &:before {
+        content: "\f114";
+        font-family: "FontAwesome";
+        margin-right: .53em;
+        display: inline-block;
+        width: 1em;
+    }
 }
 
 .tags-links {
-	&:before {
-		content: "\f02b";
-	}
+    &:before {
+        content: "\f02b";
+    }
 }
 
 .comments-link {
-	&:before {
-		content: "\f0e5";
-	}
+    &:before {
+        content: "\f0e5";
+    }
 }
 
 .edit-link {
-	&:before {
-		content: "\f040";
-	}
+    &:before {
+        content: "\f040";
+    }
 }
 
 @media screen and (min-width: 768px) {
-	.hentry.type-post {
-		@include clearfix;
+    .hentry.type-post {
+        @include clearfix;
 
-		.entry-meta {
-			@include span(2 of 9);
-			font-size: .857em;
-		}
+        .entry-meta {
+            @include span(2 of 9);
+            font-size: .857em;
+        }
 
-		.entry-content {
-			@include span(last 7 of 9);
-		}
-	}
+        .entry-content {
+            @include span(last 7 of 9);
+        }
+    }
 }
 
 /*** Homepage Components ***/
@@ -121,8 +121,8 @@
     text-align:center;
     position:relative;
     padding:1em 0;
-    .home &{
-         margin-bottom:5em;
+    body.home &, body.single-programme &{
+        margin-bottom:5em;
     }
     h2, p {
         margin:0; padding:0;
@@ -145,64 +145,55 @@
         background:$color_secondary url('../img/pattern-first.svg') no-repeat center center / cover;
     }
     &#message-01:after{
-         @include triangle(50px, $color_secondary, down);
+        @include triangle(50px, $color_secondary, down);
     }
     &#message-02{
         background:$color_primary url('../img/pattern-second.svg') no-repeat center center / cover;
     }
     &#message-02:after{
-         @include triangle(50px, $color_primary, down);
+        @include triangle(50px, $color_primary, down);
     }
 
-    
+
 }
 
 .thumbnails {
-  @include align-items(flex-start);
-  @include display(flex);
-  @include flex-direction(row);
-  @include justify-content(space-between);
-  > article {
-      @include flex(1);
-      margin:0 1em !important;
-  }
-  
+    @include align-items(flex-start);
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    > article {
+        @include flex(1);
+        margin:0 1em !important;
+    }
+
+}
+article{
+    [class*="list"]{
+        ul{
+            list-style: none;
+            @extend %reset;
+        }
+        li {
+            @include check-list (auto 20px, 2px 5px, 0 0 0 40px);
+            min-height: 30px;
+            margin-bottom: 1em;
+        }
+    }
 }
 article.panels{
     > header{
         position: relative;
         margin-bottom:8em;
-        > .badge {
-            @include display(flex);
-            @include align-items(center);
-            @include justify-content(center);
-            @include circle(175px,transparent);
-            position: absolute;
-            bottom:-30%;
-            left:20%;
-            z-index:10;
-            overflow:hidden;
-            background:transparent url('../img/badge.svg') no-repeat center center / 100%;
-            > a{ 
-                font-size: 145%;
-                text-align: center;
-                padding:20%;
-            }
-        }
     }
     section {
         .excerpt{
             padding:0 2em 0 0;
-            ul{
-                list-style: none;
-                @extend %reset;
-            }
-            li {
-                @include check-list (auto 20px, 2px 5px, 0 0 0 40px);
-                min-height: 30px;
-                margin-bottom: 1em;
-            }
         }
+    }
+    .badge{
+    position: absolute;
+    z-index:10;
     }
     &:first-child{
         header {
@@ -224,11 +215,25 @@ article.panels{
         .badge{
             left: 50% !important;
             bottom: -20% !important;
-             @include transform(rotate(3deg));
+            @include transform(rotate(3deg));
         }
     }
 }
-
+.badge {
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    @include circle(175px,transparent);
+    overflow:hidden;
+    background:transparent url('../img/badge.svg') no-repeat center center / 100%;
+    > *{ 
+        font-size: 145% !important;
+        text-align: center;
+        padding:20%;
+        color:white !important;
+        font-family: $handwritten-font;
+    }
+}
 .parallax{
     background-attachment: fixed;
     background-position: center center;
@@ -237,13 +242,13 @@ article.panels{
     padding:3em 0;
     position:relative;
     &:before{
-         @include triangle(50px, #ededee, down);
-         position: absolute;
-         top:0;
-         left:50%;
-         margin-left:-25px;
-         z-index: 9999999;
-         content:' ';
+        @include triangle(50px, #ededee, down);
+        position: absolute;
+        top:0;
+        left:50%;
+        margin-left:-25px;
+        z-index: 9999999;
+        content:' ';
     }
     .post{
         @include span(last 6 of 12);
@@ -259,7 +264,7 @@ article.panels{
                 margin-top: 1em;
             }
         }
-        
+
     }
 }
 .banner {
@@ -295,7 +300,7 @@ article.panels{
                 line-height: 1;
                 font-size: 2em;
                 @include transform(rotate(-12deg));
-        @include transform-origin(center top);
+                @include transform-origin(center top);
             }
         }
         a {
@@ -307,16 +312,46 @@ article.panels{
         }
     }
 }
-    .claim{
-        @include span(6 of 12);
-        font-family: "verveine", sans-serif;
-        font-weight: normal;
-        line-height: 1;
-        color:white !important;
-        font-size: 3em;
-        @include transform(rotate(-12deg));
-        @include transform-origin(center top);
-        &:after{
-            @include bogen('../img/bogen-white.svg');
+.claim{
+    @include span(6 of 12);
+    font-family: "verveine", sans-serif;
+    font-weight: normal;
+    line-height: 1;
+    color:white !important;
+    font-size: 3em;
+    @include transform(rotate(-12deg));
+    @include transform-origin(center top);
+    &:after{
+        @include bogen('../img/bogen-white.svg');
+    }
+}
+.single{
+    &.single-prgramme{
+         .widget-area{
+            display:none;/** Shame***/
         }
     }
+    article.programme{
+       
+        .post_content{
+            @include span(full);
+            ul {
+                margin-bottom:2em !important;
+                padding-bottom: 1em !important;
+                border-bottom: 1px dotted $color-light-grey;
+            }
+        }
+        .thumbnail{
+            position: relative;
+            @include span(3 of 12);
+            @include transform(rotate(-5deg));
+            ~.post_content{
+                @include span(last 9 of 12); 
+            }
+        }
+        .badge{
+            float: right;
+            @include transform(rotate(-5deg)); 
+        }
+    }
+}

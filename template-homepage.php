@@ -42,7 +42,9 @@ do_action('storefront_before_content');
                 <!-- Thumbnails -->
                 <?php
                 $argsMain = array(
-                    'post_type' => 'panels',
+                    'post_type' => 'programme',
+                    'post_status' => 'publish',
+                    'posts_per_page' => 3,
                     'orderby' => 'menu_order',
                     'order' => 'ASC'
                 );

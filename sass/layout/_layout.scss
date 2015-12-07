@@ -26,7 +26,6 @@
 	.woocommerce-active {
 		.site-header {
 			
-
 			.site-search {
 				@include span(last 3 of 12);
 				clear: none;
@@ -95,6 +94,11 @@
 
 	.content-area {
 		@include span(9 of 12);
+                .woocommerce-active &{
+                    float: none !important;
+                    width:100% !important;
+                    
+                }
 	}
 
 	.widget-area {
