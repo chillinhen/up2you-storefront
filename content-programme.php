@@ -16,6 +16,9 @@ endif; ?></h2>
         <?php if (has_post_thumbnail()) :?>   
             <aside class="thumbnail">
                 <?php the_post_thumbnail(); ?>
+                 <?php if (get_field('preis')) : ?>
+                    <div class="badge"><?php the_field('preis'); ?></div>
+                <?php endif; ?>
             </aside>
         <?php endif; ?>
          
@@ -23,10 +26,6 @@ endif; ?></h2>
 
             <?php if (get_field('link') & get_field('linktext')) : ?>
                 <a class="button" href="<?php the_field('link') ?>"><?php the_field('linktext') ?></a>
-
-                <?php if (get_field('preis')) : ?>
-                    <h3 class="badge"><?php the_field('preis'); ?></h3>
-                <?php endif; ?>
             </div>
             <?php endif; ?>
     </section>

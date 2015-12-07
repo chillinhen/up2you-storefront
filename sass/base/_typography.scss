@@ -48,9 +48,6 @@ h6{
     font-weight: 500;
     margin: 0 0 .618em;
     color: darken( $color_body, 20% );
-    .badge &{
-       color: white !important; 
-    }
     font-style: italic;
     .full-size-bar &{
         font-style: normal;

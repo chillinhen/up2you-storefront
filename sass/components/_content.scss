@@ -169,9 +169,16 @@
 
 }
 article{
+    ul{
+        list-style: none;
+        li{
+            &:before{
+                @include default-list;
+            }
+        }
+    }
     [class*="list"]{
         ul{
-            list-style: none;
             @extend %reset;
         }
         li {
@@ -181,44 +188,7 @@ article{
         }
     }
 }
-article.panels{
-    > header{
-        position: relative;
-        margin-bottom:8em;
-    }
-    section {
-        .excerpt{
-            padding:0 2em 0 0;
-        }
-    }
-    .badge{
-    position: absolute;
-    z-index:10;
-    }
-    &:first-child{
-        header {
-            margin-bottom:5em;
-        }
-        .badge{
-            bottom: -20% !important;
-            left: -20% !important;
-            @include transform(rotate(-5deg));
-            > a {
-                font-size: 200%; 
-            }
-        }
-    }
-    &:last-child{
-        header {
-            margin-bottom:5em;
-        }
-        .badge{
-            left: 50% !important;
-            bottom: -20% !important;
-            @include transform(rotate(3deg));
-        }
-    }
-}
+
 .badge {
     @include display(flex);
     @include align-items(center);
@@ -226,12 +196,13 @@ article.panels{
     @include circle(175px,transparent);
     overflow:hidden;
     background:transparent url('../img/badge.svg') no-repeat center center / 100%;
-    > *{ 
-        font-size: 145% !important;
-        text-align: center;
-        padding:20%;
-        color:white !important;
-        font-family: $handwritten-font;
+    font-size: 3em !important;
+    text-align: center;
+    padding:12%;
+    color:white ;
+    font-family: $handwritten-font;
+    > a{
+        color:inherit !important;
     }
 }
 .parallax{
@@ -276,7 +247,7 @@ article.panels{
     }
     .claim-list{
         h1,h2,h3.h4,h5,h6 {
-            font-family: "verveine", sans-serif;
+            font-family: $handwritten-font;
             font-weight: normal;
             line-height: 1;
             font-size: 2em;
@@ -295,7 +266,7 @@ article.panels{
             display:inline;
             width:auto;
             ~span{
-                font-family: "verveine", sans-serif;
+                font-family: $handwritten-font;
                 font-weight: normal;
                 line-height: 1;
                 font-size: 2em;
@@ -314,7 +285,7 @@ article.panels{
 }
 .claim{
     @include span(6 of 12);
-    font-family: "verveine", sans-serif;
+    font-family: $handwritten-font;
     font-weight: normal;
     line-height: 1;
     color:white !important;
@@ -325,8 +296,56 @@ article.panels{
         @include bogen('../img/bogen-white.svg');
     }
 }
+article.programme{
+    > header{
+        position: relative;
+        margin-bottom:5em;
+    }
+    section {
+        .excerpt{
+            padding:0 2em 0 0;
+            li{
+            list-style: none;
+            @include check-list (auto 20px, 2px 5px, 0 0 0 40px);
+            min-height: 30px;
+            margin-bottom: 1em;
+            }
+        }
+    }
+    .badge{
+        position: absolute;
+        z-index: 10;
+        top: auto;
+        left: auto;
+        bottom: -25%;
+        right: 0;
+        @include transform(rotate(8deg));
+    }
+    &:first-child{
+        header {
+            margin-bottom:5em;
+        }
+        .badge{
+            bottom: -20% !important;
+            left: -20% !important;
+            @include transform(rotate(-12deg));
+            font-size: 200%; 
+        }
+    }
+    &:last-child{
+        header {
+            margin-bottom:5em;
+        }
+        .badge{
+            left: 50% !important;
+            bottom: -20% !important;
+            @include transform(rotate(3deg));
+        }
+    }
+}
+
 .single{
-    &.single-prgramme{
+    &.single-programme{
          .widget-area{
             display:none;/** Shame***/
         }
@@ -350,8 +369,10 @@ article.panels{
             }
         }
         .badge{
-            float: right;
-            @include transform(rotate(-5deg)); 
+            position: absolute;
+            left: 15% !important;
+            bottom: -35% !important;
+            @include transform(rotate(-15deg));
         }
     }
 }

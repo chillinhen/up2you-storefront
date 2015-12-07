@@ -14,6 +14,16 @@
 @mixin check-list ($size,$pos, $pd){
     background: transparent url('../img/check.svg') no-repeat $pos / $size;
     padding: $pd;
+    &:before{
+        content:' ';
+    }
+}
+@mixin default-list{
+    font-family: 'FontAwesome';
+    content: "\f069";
+    color: #d14491;
+    font-size: .75em;
+    padding-right: 1em;
 }
 @mixin icon-style($cont){
     &:before {

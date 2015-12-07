@@ -431,7 +431,7 @@ body {
  */
 .site-header {
   background-color: #fff;
-  padding-top: 2.618em;
+  padding: 2em 0;
   color: #9aa0a7;
   background-position: center center;
   position: relative;
@@ -696,13 +696,6 @@ h6 {
   margin: 0 0 .618em;
   color: black;
   font-style: italic; }
-  .badge h1, .badge
-  h2, .badge
-  h3, .badge
-  h4, .badge
-  h5, .badge
-  h6 {
-    color: white !important; }
   .full-size-bar h1, .full-size-bar
   h2, .full-size-bar
   h3, .full-size-bar
@@ -718,7 +711,7 @@ h6 {
   margin-left: 1em; }
 
 .thumbnails header *, [id*="message"] * {
-  font-family: "Covered By Your Grace", cursive;
+  font-family: "Schoolbell", cursive;
   color: white !important;
   line-height: 1;
   font-weight: normal; }
@@ -1788,44 +1781,21 @@ fieldset {
     flex: 1;
     margin: 0 1em !important; }
 
-article [class*="list"] ul {
+article ul {
   list-style: none; }
+  article ul li:before {
+    font-family: 'FontAwesome';
+    content: "\f069";
+    color: #d14491;
+    font-size: .75em;
+    padding-right: 1em; }
 article [class*="list"] li {
   background: transparent url("../img/check.svg") no-repeat 2px 5px/auto 20px;
   padding: 0 0 0 40px;
   min-height: 30px;
   margin-bottom: 1em; }
-
-article.panels > header {
-  position: relative;
-  margin-bottom: 8em; }
-article.panels section .excerpt {
-  padding: 0 2em 0 0; }
-article.panels .badge {
-  position: absolute;
-  z-index: 10; }
-article.panels:first-child header {
-  margin-bottom: 5em; }
-article.panels:first-child .badge {
-  bottom: -20% !important;
-  left: -20% !important;
-  -webkit-transform: rotate(-5deg);
-  -moz-transform: rotate(-5deg);
-  -ms-transform: rotate(-5deg);
-  -o-transform: rotate(-5deg);
-  transform: rotate(-5deg); }
-  article.panels:first-child .badge > a {
-    font-size: 200%; }
-article.panels:last-child header {
-  margin-bottom: 5em; }
-article.panels:last-child .badge {
-  left: 50% !important;
-  bottom: -20% !important;
-  -webkit-transform: rotate(3deg);
-  -moz-transform: rotate(3deg);
-  -ms-transform: rotate(3deg);
-  -o-transform: rotate(3deg);
-  transform: rotate(3deg); }
+  article [class*="list"] li:before {
+    content: ' '; }
 
 .badge {
   display: -webkit-box;
@@ -1859,13 +1829,14 @@ article.panels:last-child .badge {
   border-radius: 87.5px;
   background: transparent;
   overflow: hidden;
-  background: transparent url("../img/badge.svg") no-repeat center center/100%; }
-  .badge > * {
-    font-size: 145% !important;
-    text-align: center;
-    padding: 20%;
-    color: white !important;
-    font-family: "Covered By Your Grace", cursive; }
+  background: transparent url("../img/badge.svg") no-repeat center center/100%;
+  font-size: 3em !important;
+  text-align: center;
+  padding: 12%;
+  color: white;
+  font-family: "Schoolbell", cursive; }
+  .badge > a {
+    color: inherit !important; }
 
 .parallax {
   background-attachment: fixed;
@@ -1909,7 +1880,7 @@ article.panels:last-child .badge {
   .banner * {
     color: white !important; }
   .banner .claim-list h1, .banner .claim-list h2, .banner .claim-list h3.h4, .banner .claim-list h5, .banner .claim-list h6 {
-    font-family: "verveine", sans-serif;
+    font-family: "Schoolbell", cursive;
     font-weight: normal;
     line-height: 1;
     font-size: 2em; }
@@ -1920,13 +1891,15 @@ article.panels:last-child .badge {
     font-size: 1.2em;
     line-height: 1.2;
     margin-bottom: 1em; }
+    .banner .claim-list li:before {
+      content: ' '; }
   .banner .buttongroup {
     margin-left: 40px; }
     .banner .buttongroup > div {
       display: inline;
       width: auto; }
       .banner .buttongroup > div ~ span {
-        font-family: "verveine", sans-serif;
+        font-family: "Schoolbell", cursive;
         font-weight: normal;
         line-height: 1;
         font-size: 2em;
@@ -1949,7 +1922,7 @@ article.panels:last-child .badge {
   width: 48.93617%;
   float: left;
   margin-right: 2.12766%;
-  font-family: "verveine", sans-serif;
+  font-family: "Schoolbell", cursive;
   font-weight: normal;
   line-height: 1;
   color: white !important;
@@ -1973,7 +1946,54 @@ article.panels:last-child .badge {
     height: 60px;
     z-index: 10; }
 
-.single.single-prgramme .widget-area {
+article.programme > header {
+  position: relative;
+  margin-bottom: 5em; }
+article.programme section .excerpt {
+  padding: 0 2em 0 0; }
+  article.programme section .excerpt li {
+    list-style: none;
+    background: transparent url("../img/check.svg") no-repeat 2px 5px/auto 20px;
+    padding: 0 0 0 40px;
+    min-height: 30px;
+    margin-bottom: 1em; }
+    article.programme section .excerpt li:before {
+      content: ' '; }
+article.programme .badge {
+  position: absolute;
+  z-index: 10;
+  top: auto;
+  left: auto;
+  bottom: -25%;
+  right: 0;
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  -o-transform: rotate(8deg);
+  transform: rotate(8deg); }
+article.programme:first-child header {
+  margin-bottom: 5em; }
+article.programme:first-child .badge {
+  bottom: -20% !important;
+  left: -20% !important;
+  -webkit-transform: rotate(-12deg);
+  -moz-transform: rotate(-12deg);
+  -ms-transform: rotate(-12deg);
+  -o-transform: rotate(-12deg);
+  transform: rotate(-12deg);
+  font-size: 200%; }
+article.programme:last-child header {
+  margin-bottom: 5em; }
+article.programme:last-child .badge {
+  left: 50% !important;
+  bottom: -20% !important;
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  transform: rotate(3deg); }
+
+.single.single-programme .widget-area {
   display: none;
   /** Shame***/ }
 .single article.programme .post_content {
@@ -2000,12 +2020,14 @@ article.panels:last-child .badge {
     float: right;
     margin-right: 0; }
 .single article.programme .badge {
-  float: right;
-  -webkit-transform: rotate(-5deg);
-  -moz-transform: rotate(-5deg);
-  -ms-transform: rotate(-5deg);
-  -o-transform: rotate(-5deg);
-  transform: rotate(-5deg); }
+  position: absolute;
+  left: 15% !important;
+  bottom: -35% !important;
+  -webkit-transform: rotate(-15deg);
+  -moz-transform: rotate(-15deg);
+  -ms-transform: rotate(-15deg);
+  -o-transform: rotate(-15deg);
+  transform: rotate(-15deg); }
 
 /**
  * Post Formats
@@ -2045,7 +2067,7 @@ article.panels:last-child .badge {
     box-shadow: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.5); }
   .wp-caption .wp-caption-text {
     text-align: left;
-    font-family: 'verveine', sans-serif;
+    font-family: "Schoolbell", cursive;
     color: #d14491;
     border-bottom: 0;
     padding: 1em 0;
