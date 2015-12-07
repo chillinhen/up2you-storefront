@@ -2,6 +2,11 @@
 add_action('after_setup_theme', 'sf_child_theme_setup');
 
 function sf_child_theme_setup() {
+        // Add Translation Option
+    load_theme_textdomain('storefront-child-theme-master', get_stylesheet_directory() . '/languages');
+
+    $locale = get_locale();
+    $locale_file = get_stylesheet_directory_uri() . "/languages/$locale.php";
     //init styles
     add_action('wp_enqueue_scripts', 'theme_enqueue_styles', 30);
     if (!function_exists("theme_enqueue_styles")) {

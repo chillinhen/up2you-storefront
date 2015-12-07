@@ -25,7 +25,13 @@
                 <div class="col-full">
 
                     <div class="col-left nav"><?php do_action('storefront_child_nav'); ?></div>
-                    <div class="col-center branding"><?php do_action('storefront_child_branding'); ?></div>
+                    <div class="col-center branding">
+                        <div class="logo">
+						<a href="<?php echo home_url(); ?>">
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo-img">
+						</a>
+					</div>
+                    </div>
                     <div class="col-right">     
                         <?php do_action( 'storefront_child_cart' );?>
                         <?php do_action( 'storefront_child_meta' );?>
