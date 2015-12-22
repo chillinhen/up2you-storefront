@@ -44,14 +44,14 @@ h4,
 h5,
 h6{
     font-family: $header-font;
-    clear: both;
+    clear: none;
     font-weight: 500;
     margin: 0 0 .618em;
-    color: darken( $color_body, 20% );
     font-style: italic;
     .full-size-bar &{
         font-style: normal;
     }
+    
 }
 #site-navigation a{
     font-family: $header-font!important;
@@ -59,7 +59,7 @@ h6{
     font-style: italic;
     margin-left: 1em;
 }
-.thumbnails header *, [id*="message"] *{
+.badge, [id*="message"] *{
     font-family: $handwritten-font;
     color:white !important;
     line-height: 1;
@@ -234,10 +234,17 @@ a {
     color: $color_links;
     text-decoration: none;
     font-weight: normal;
-
-    &:focus {
-        outline: 1px solid $color_links;
+    &:hover {
+      color:$color_links;
     }
+    &:focus {
+        outline: none !important;
+        .menu-item &{
+            outline:none !important;
+            border-bottom: 2px solid #000;
+        }
+    }
+    &:active {outline:none;}
 }
 
 // Wait, what..?

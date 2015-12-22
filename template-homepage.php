@@ -13,13 +13,6 @@
  */
 get_header();
 ?>
-<?php if (get_header_image()): ?>
-<div class="banner" role="banner" style="background-image: url('<?php echo esc_url(get_header_image()); ?>');">
-            <div class="col-full">
-            <?php get_template_part('partials/banner', 'home'); ?>
-        </div>
-</div>
-<?php endif; ?>
 
 <?php
 /**
@@ -64,7 +57,7 @@ do_action('storefront_before_content');
     </div><!-- .col-full -->
     <?php get_template_part('partials/message', 'second'); ?>
     
-    <main id="story" class="site-main" role="main">
+    <main id="story" class="" role="main">
         <div class="col-full">
             <?php while (have_posts()) : the_post();
                 the_content();

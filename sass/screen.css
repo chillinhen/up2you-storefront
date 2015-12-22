@@ -694,7 +694,7 @@ h6 {
   font-style: italic;
   margin-left: 1em; }
 
-.thumbnails header *, [id*="message"] * {
+.badge, [id*="message"] * {
   font-family: "Schoolbell", cursive;
   color: white !important;
   line-height: 1;
@@ -845,7 +845,7 @@ a {
     outline: none !important; }
     .menu-item a:focus {
       outline: none !important;
-      border-bottom: 2px solid #d14491; }
+      border-bottom: 2px solid #000; }
   a:active {
     outline: none; }
 
@@ -1774,7 +1774,8 @@ fieldset {
     -moz-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    margin: 0 1em !important; }
+    margin: 0 !important;
+    padding: 0 1.6em; }
 
 article ul {
   list-style: none; }
@@ -1857,14 +1858,16 @@ article .shopping-list {
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
-  height: 175px;
-  width: 175px;
-  -webkit-border-radius: 87.5px;
-  border-radius: 87.5px;
+  height: 170px;
+  width: 170px;
+  -webkit-border-radius: 85px;
+  border-radius: 85px;
   background: transparent;
+  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
   overflow: hidden;
   background: transparent url("../img/badge.svg") no-repeat center center/100%;
-  font-size: 2em;
+  font-size: 1.75em;
   text-align: center;
   padding: 12%;
   color: white;
@@ -2028,7 +2031,9 @@ article.programme section .excerpt {
     position: relative;
     margin-left: 2em;
     min-height: 30px;
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    font-size: 1.3em;
+    font-weight: 500; }
     article.programme section .excerpt li:before {
       content: ' ';
       background: transparent url("../img/check.svg") no-repeat top left/2em;
@@ -2167,9 +2172,9 @@ article.programme:last-child .badge {
   display: inline-block; }
 
 /**
- * Captions
+ * Captions, Image style
  */
-.wp-caption {
+.wp-caption, .thumbnail {
   margin-bottom: 16px;
   max-width: 100%;
   padding: 1em;
@@ -2179,28 +2184,28 @@ article.programme:last-child .badge {
   background: white;
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2); }
-  .wp-caption img[class*="wp-image-"] {
+  .wp-caption img, .thumbnail img {
     display: block;
     margin: 0 auto;
     -webkit-box-shadow: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
     box-shadow: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.5); }
-  .wp-caption .wp-caption-text {
+  .wp-caption .wp-caption-text, .wp-caption .thumbnail-caption, .thumbnail .wp-caption-text, .thumbnail .thumbnail-caption {
     text-align: left;
     font-family: "Schoolbell", cursive;
-    color: #d14491;
+    color: #d14491 !important;
     border-bottom: 0;
     padding: 1em 0;
-    text-align: center;
+    text-align: center !important;
     line-height: 1;
-    font-size: 2em; }
-  .wp-caption.alignleft {
+    font-size: 1.6em; }
+  .wp-caption.alignleft, .thumbnail.alignleft {
     margin-right: 16px;
     -webkit-transform: rotate(-8deg);
     -moz-transform: rotate(-8deg);
     -ms-transform: rotate(-8deg);
     -o-transform: rotate(-8deg);
     transform: rotate(-8deg); }
-    .wp-caption.alignleft:before {
+    .wp-caption.alignleft:before, .thumbnail.alignleft:before {
       -webkit-transform: scale(-1, 1) rotate(24deg);
       -moz-transform: scale(-1, 1) rotate(24deg);
       -ms-transform: scale(-1, 1) rotate(24deg);
@@ -2208,14 +2213,14 @@ article.programme:last-child .badge {
       transform: scale(-1, 1) rotate(24deg);
       top: 50%;
       right: -250px; }
-  .wp-caption.alignright {
+  .wp-caption.alignright, .thumbnail.alignright {
     margin-left: 16px;
     -webkit-transform: rotate(5deg);
     -moz-transform: rotate(5deg);
     -ms-transform: rotate(5deg);
     -o-transform: rotate(5deg);
     transform: rotate(5deg); }
-    .wp-caption.alignright:before {
+    .wp-caption.alignright:before, .thumbnail.alignright:before {
       -webkit-transform: rotate(2deg);
       -moz-transform: rotate(2deg);
       -ms-transform: rotate(2deg);

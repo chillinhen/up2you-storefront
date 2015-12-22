@@ -15,7 +15,7 @@ get_header();
  */
 do_action('storefront_before_content');
 ?>
-<div id="content" class="site-content" tabindex="-1">
+<div id="content" class="site-content">
     <?php get_template_part('partials/message', 'first'); ?>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">

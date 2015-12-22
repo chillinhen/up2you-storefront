@@ -3,4 +3,4 @@
     <h3 class="title"><?php the_title();?></h3>
     <?php the_content();?>
     </div>
-</article>>
+</article>

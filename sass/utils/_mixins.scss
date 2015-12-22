@@ -12,10 +12,18 @@
     padding:0 !important;
 }
 @mixin check-list ($url,$size,$pos, $pd){
-    background: transparent $url no-repeat $pos / $size;
-    padding: $pd;
+    position: relative;
+    margin-left:2em;
     &:before{
         content:' ';
+        background: transparent $url no-repeat $pos / $size;
+        padding: $pd;
+        position:  absolute;
+        top:0;
+        left:-2em;
+        width:$size;
+        height:$size;
+        display: inline-block;
     }
 }
 @mixin default-list{
@@ -125,6 +133,10 @@ box-shadow:inset 1px 1px 5px 0 rgba(0,0,0,.5);
     -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,.2);
     box-shadow: 0 0 5px 0 rgba(0,0,0,.2);
 }
+@mixin shadow($width){
+    -webkit-box-shadow: 0 0 $width 0 rgba(0,0,0,.2);
+    box-shadow: 0 0 $width 0 rgba(0,0,0,.2);
+}
 @mixin bogen($img-url){
     position: absolute;
     content:'';
@@ -141,3 +153,4 @@ box-shadow:inset 1px 1px 5px 0 rgba(0,0,0,.5);
   background-color: $solid-color;
   background-color: $color;
 }
+/* Bsp. @include alpha-background-color(rgba(black, 0.35), white); */

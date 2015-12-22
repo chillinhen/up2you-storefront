@@ -67,6 +67,9 @@
 			padding: .857em 1.387em;
 			display: block;
                         color:$color_dark_grey;
+                        &:focus, &:active{
+                            outline:none !important;
+                        }
 
 			&:before {
 				font-family: "FontAwesome";
@@ -78,6 +81,7 @@
 			&:hover {
 				color: $color_primary;
 			}
+                        
 		}
 	}
 }
@@ -115,9 +119,9 @@
 				a {
 					display: block;
 
-					&:before {
+/*					&:before {
 						display: none;
-					}
+					}*/
 				}
 
 				// link hover
@@ -285,7 +289,8 @@
 				position: relative;
                                 &:before {
                                         font-family: "FontAwesome";
-                                        font-size: 1em;
+                                        font-size: 18px;
+                                        margin-top:$vspacing;
 				}
                                 & span {
                                     text-indent: -999999px;

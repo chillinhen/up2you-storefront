@@ -10,6 +10,7 @@ $base-font: 		"Josefin Sans", arial, helvetica, sans-serif !default;
 $header-font: 		"Merriweather", georgia, times new roman, serif !default;
 $handwritten-font:      "Schoolbell", cursive !default;
 $base-font-size:        16px;
+$semibold:              600;
 
 // base color scheme
 $body-background: 	#fff;
@@ -23,7 +24,7 @@ $color_border:		rgba(0,0,0,0.1);
 $error: 			#e2401c;
 $success: 			#0f834d;
 $info: 				#3D9CD2;
-$vspacing: 			1.618em;
+$vspacing: 		$base-font-size;
 
 $susy: (
 	columns: 12,

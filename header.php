@@ -32,13 +32,18 @@
 						</a>
 					</div>
                     </div>
-                    <div class="col-right">     
-                        <?php do_action( 'storefront_child_cart' );?>
+                    <div class="col-right">
                         <?php do_action( 'storefront_child_meta' );?>
+                        <?php do_action( 'storefront_child_cart' );?>
+                      
                     </div>
 
 
                 </div>
             </header><!-- #masthead -->
-
+            <?php if( is_home() || is_front_page() ) : ?>
+            <?php get_template_part('partials/banner', 'home'); ?>
+            <?php else: ?>
+             <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
+           <?php endif; ?>
 

@@ -4,7 +4,7 @@ $url = get_field("hintergrundbild");
 $post = get_field("post");
 ?>
 <?php if ($url) : ?>
-    <div class="parallax" style="background-image: url('<?php echo ($url) ? $url : ''; ?>');">
+    <div id="cta-anchor" class="parallax" style="background-image: url('<?php echo ($url) ? $url : ''; ?>');">
         <div class="col-full">
             <?php if ($frage) : ?>
                 <h2 class="claim"><?php echo $frage; ?></h2>

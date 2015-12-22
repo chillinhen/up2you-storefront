@@ -64,6 +64,7 @@
 			width: 100%;
 			text-align: center;
 			text-indent: 0;
+                        font-size: 2em;
 		}
 
 		span {
@@ -1330,7 +1331,7 @@ dl.variation {
 		position: relative;
 
 		.cart-contents {
-			padding: 0 1em 2.244em;
+			padding: 0 1em 0 0;
 			display: block;
 			position: relative;
 			background-color: transparent;

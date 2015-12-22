@@ -128,10 +128,10 @@
         margin:0; padding:0;
     }
     h2 {
-        font-size:3.75em;
+        font-size:3em;
     }
     p{
-        font-size: 2em;
+        font-size: 1.8em;
     }
     &:after{
         content:' ';
@@ -164,7 +164,8 @@
     @include justify-content(space-between);
     > article {
         @include flex(1);
-        margin:0 1em !important;
+        margin:0 !important;
+        padding:0 1.6em;
     }
 
 }
@@ -180,9 +181,9 @@ article{
             @extend %reset;
         }
         li {
-            @include check-list (url('../img/check.svg'),auto 20px, 2px 5px, 0 0 0 40px);
-            min-height: 30px;
-            margin-bottom: 1em;
+            @include check-list (url('../img/check.svg'),2em, top left,0);
+            /*            min-height: 30px;
+                        margin-bottom: 1em;*/
         }
     }
     .shopping-list{
@@ -193,7 +194,7 @@ article{
         font-weight:bold;
         border:0;
         li {
-            @include check-list (url('../img/check-white.svg'),auto 20px, 2px 5px, 0 0 0 40px);
+            @include check-list (url('../img/check-white.svg'),2em, top left, 0);
         }
         > *{
             color:inherit;
@@ -205,10 +206,11 @@ article{
     @include display(flex);
     @include align-items(center);
     @include justify-content(center);
-    @include circle(175px,transparent);
+    @include circle(170px,transparent);
+    @include shadow(20px);
     overflow:hidden;
     background:transparent url('../img/badge.svg') no-repeat center center / 100%;
-    font-size: 2em;
+    font-size: 1.75em;
     text-align: center;
     padding:12%;
     color:white ;
@@ -254,13 +256,22 @@ article{
     }
 }
 .banner {
-    background-position:75% 100%;
+    background-position:90% 75%;
     background-repeat: no-repeat;
-    padding:3em 0;
+    background-size:initial;
+    min-height:450px;
     * {
         color:white !important;
     }
+    h1.claim {
+        margin-top: 2em;
+    }
+    h1.claim:after{
+        top: 100px;
+        right: 20px;
+    }
     .claim-list{
+        margin:3em 0 2em 0;
         h1,h2,h3.h4,h5,h6 {
             font-family: $handwritten-font;
             font-weight: normal;
@@ -269,25 +280,43 @@ article{
         }
         li {
             list-style: none;
-            @include check-list (url('../img/check.svg'), auto 1em, 2px 5px, 0 0 0 40px);
-            font-size: 1.2em;
-            line-height: 1.2;
-            margin-bottom: 1em;
+            font-weight: $semibold;
+            font-size:1.25em;
+            margin-bottom:.5em;
+            @include check-list (url('../img/check.svg'), 1em, top left,0);
         }
     }
     .buttongroup{
         margin-left:40px;
-        > div {
+        > * {
+            float:left;
+        }
+        div {
             display:inline;
             width:auto;
+            p {
+                padding:0;
+                margin:0;
+                display: inline;
+            }
+            a {
+                min-width:170px;
+                text-align: center;
+                display: inline-block;
+            }
             ~span{
                 font-family: $handwritten-font;
                 font-weight: normal;
                 line-height: 1;
                 font-size: 2em;
+                margin:0 .5em;
                 @include transform(rotate(-12deg));
                 @include transform-origin(center top);
+                display: inline-block;
             }
+        }
+        .second-bt a{
+            background-color: lighten($color_primary,20%);
         }
         a {
             strong{
@@ -304,11 +333,17 @@ article{
     font-weight: normal;
     line-height: 1;
     color:white !important;
-    font-size: 3em;
+    font-size: 2.8em;
     @include transform(rotate(-12deg));
     @include transform-origin(center top);
+    margin-top:1em;
     &:after{
-        @include bogen('../img/bogen-white.svg');
+        @include bogen(url('../img/bogen-white.svg'));
+        bottom:0;
+        right:0;
+    }
+    .banner &:after {
+        content:' ';
     }
 }
 article.programme{
@@ -320,10 +355,15 @@ article.programme{
         .excerpt{
             padding:0 2em 0 0;
             li{
-            list-style: none;
-            @include check-list (url('../img/check.svg'),auto 20px, 2px 5px, 0 0 0 40px);
-            min-height: 30px;
-            margin-bottom: 1em;
+                list-style: none;
+                @include check-list (url('../img/check.svg'),2em, top left, 0);
+                min-height: 30px;
+                margin-bottom: 1em;
+                font-size:1.3em;
+                font-weight:500;
+                &:before{
+                    left:-3em;
+                }
             }
         }
     }
@@ -364,26 +404,25 @@ article.programme{
 
 .single{
     &.single-programme{
-         .widget-area{
+        .widget-area{
             display:none;/** Shame***/
         }
     }
     article.programme{
-       
-        .post_content{
-            @include span(full);
-            [class*="list"] {
-                margin-bottom:2em !important;
-                padding-bottom: 1em !important;
-                border-bottom: 1px dotted $color-light-grey;
-            }
-        }
         .thumbnail{
             position: relative;
             @include span(3 of 12);
             @include transform(rotate(-5deg));
             ~.post_content{
                 @include span(last 9 of 12); 
+            }
+        }
+        .post_content{
+            @include span(full);
+            [class*="list"] {
+                margin-bottom:2em !important;
+                padding-bottom: 1em !important;
+                border-bottom: 1px dotted $color-light-grey;
             }
         }
         .badge{
@@ -394,3 +433,47 @@ article.programme{
         }
     }
 }
+#tabbed{
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0; 
+        li{
+            margin-left: 0;
+            h3 {margin:0;line-height: 1;}
+            &:before{display:none;}
+        }
+        &#tabs { 
+            li{
+                display: inline-block;
+                background-color: $color-primary;
+                border: 1px solid $color-primary;
+                padding: .5em 1em;
+                cursor: pointer;
+                font-weight:bold;
+                h3 {color: #fff;}
+                &:hover, &.active {
+                    background-color: white;
+                    border-bottom: 1px solid white;
+                    h3 {
+                        color:#000;
+                    }
+                }  
+            }
+        }
+        &#tab {
+            &.style{
+                margin-top:-1px;
+                border:1px solid $color-primary;
+                padding:1em;
+            }
+            li{
+                display:none;
+                &.active {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+

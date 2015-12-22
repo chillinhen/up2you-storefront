@@ -82,9 +82,33 @@
 			}
 		}
 	}
+        
+        .site-header-cart {
+            a.cart-contents{
+              font-size:18px;
+              font-weight: bold;
+              color:black;
+              padding:$vspacing !important;
+              .amount, .count {
+                  font-weight:bold !important;
+              }
+              &:after{
+                  padding-top:$vspacing;
+              }
+            }
+            &:hover, &:focus{
+                a.cart-contents, {
+                    background:$color_secondary;
+                    color:white;
+                }
+                .widget_shopping_cart{
+                    font-size: $base-font-size;
+                }
+            }
+        }
 
 	.col-full {
-		@include clearfix;
+/*		@include clearfix;*/
 		@include container(65.141em);
 	}
 
@@ -298,13 +322,29 @@
 /*** Home ***/
 #story {
     @include linear-gradient(0deg, #ededee 0%, #fff 50%, #fff 100%);
-    @extend %reset;
+/*    @extend %reset;*/
+width:100%;
     
     .wp-caption{
         position: relative;
         &:before{
-            @include bogen('../img/bogen.svg'); 
+           @include bogen(url('../img/bogen.svg'));
         }
     }
 }
 
+/*** Stories ***/
+.single-erfolgsstories{
+    .post_content{
+       padding:2em 0;
+    }
+    section.infos{
+        margin:2em auto;
+        > div:first-child {
+            @include span(7 of 12);
+        }
+        > div:last-child {
+            @include span(last 5 of 12);
+        }
+    }
+}

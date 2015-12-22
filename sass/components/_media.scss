@@ -15,9 +15,9 @@
 }
 
 /**
- * Captions
+ * Captions, Image style
  */
-.wp-caption {
+.wp-caption, .thumbnail {
     margin-bottom: $vspacing;
     max-width: 100%;
     padding:1em;
@@ -25,20 +25,20 @@
     background:white;
     @include img-shadow;
 
-    img[class*="wp-image-"] {
+    img {
         display: block;
         margin: 0 auto;
         @include img-shadow-inset;
     }
-    .wp-caption-text {
+    .wp-caption-text, .thumbnail-caption {
         text-align: left;
         font-family: $handwritten-font;
-        color:$color_primary;
+        color:$color_primary !important;
         border-bottom: 0;
         padding: 1em 0;
-        text-align: center;
+        text-align: center !important;
         line-height: 1;
-        font-size: 2em;
+        font-size: 1.6em;
     }
     &.alignleft{
         margin-right: $vspacing;
