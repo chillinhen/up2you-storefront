@@ -346,7 +346,7 @@ article{
         content:' ';
     }
 }
-article.programme{
+article.programme,article.trainer{
     > header{
         position: relative;
         margin-bottom:5em;
@@ -408,14 +408,9 @@ article.programme{
             display:none;/** Shame***/
         }
     }
-    article.programme{
+    article.programme, article.trainer{
         .thumbnail{
             position: relative;
-            @include span(3 of 12);
-            @include transform(rotate(-5deg));
-            ~.post_content{
-                @include span(last 9 of 12); 
-            }
         }
         .post_content{
             @include span(full);
@@ -430,6 +425,15 @@ article.programme{
             left: 15% !important;
             bottom: -35% !important;
             @include transform(rotate(-15deg));
+        }
+    }
+    article.programme, article.trainer{
+        .thumbnail{
+            @include span(4 of 12);
+            @include transform(rotate(-5deg));
+            ~.post_content{
+                @include span(last 8 of 12); 
+            }
         }
     }
 }

@@ -14,7 +14,7 @@ function sf_child_theme_setup() {
 
             function theme_enqueue_styles() {
                 wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
-                wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/sass/screen.css', array('parent-style')
+                wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/css/screen.css', array('parent-style')
                 );
                 //wp_dequeue_style( 'storefront-woocommerce-style', get_template_directory_uri() . '/inc/woocommerce/css/woocommerce.css', $storefront_version );
                  wp_enqueue_style( 'storefront-woocommerce-child-style', get_stylesheet_directory_uri() . '/inc/woocommerce/css/woocommerce.css', array('child-style') );

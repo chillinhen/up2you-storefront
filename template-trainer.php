@@ -42,7 +42,7 @@ get_header();
             do_action('storefront_loop_before');
 
             while ($trainer->have_posts()) : $trainer->the_post();
-                get_template_part('content', 'trainer');
+                get_template_part('content', 'single');
                 
                 endwhile; wp_reset_query(); ?>
         <?php else : ?>

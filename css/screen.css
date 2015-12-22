@@ -694,7 +694,7 @@ h6 {
   font-style: italic;
   margin-left: 1em; }
 
-.thumbnails header *, [id*="message"] * {
+.badge, [id*="message"] * {
   font-family: "Schoolbell", cursive;
   color: white !important;
   line-height: 1;
@@ -845,7 +845,7 @@ a {
     outline: none !important; }
     .menu-item a:focus {
       outline: none !important;
-      border-bottom: 2px solid #d14491; }
+      border-bottom: 2px solid #000; }
   a:active {
     outline: none; }
 
@@ -985,8 +985,7 @@ a {
 
   .content-area,
   .widget-area {
-    margin-bottom: 2.618em;
-    margin-top: 2em; }
+    margin-bottom: 2.618em; }
     .page-template-template-homepage-php .content-area, .page-template-template-homepage-php
     .widget-area {
       margin-top: 0em; }
@@ -1774,7 +1773,8 @@ fieldset {
     -moz-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    margin: 0 1em !important; }
+    margin: 0 !important;
+    padding: 0 1.6em; }
 
 article ul {
   list-style: none; }
@@ -1857,14 +1857,16 @@ article .shopping-list {
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
-  height: 175px;
-  width: 175px;
-  -webkit-border-radius: 87.5px;
-  border-radius: 87.5px;
+  height: 170px;
+  width: 170px;
+  -webkit-border-radius: 85px;
+  border-radius: 85px;
   background: transparent;
+  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
   overflow: hidden;
   background: transparent url("../img/badge.svg") no-repeat center center/100%;
-  font-size: 2em;
+  font-size: 1.75em;
   text-align: center;
   padding: 12%;
   color: white;
@@ -2018,18 +2020,20 @@ article .shopping-list {
   .banner .claim:after {
     content: ' '; }
 
-article.programme > header {
+article.programme > header, article.trainer > header {
   position: relative;
   margin-bottom: 5em; }
-article.programme section .excerpt {
+article.programme section .excerpt, article.trainer section .excerpt {
   padding: 0 2em 0 0; }
-  article.programme section .excerpt li {
+  article.programme section .excerpt li, article.trainer section .excerpt li {
     list-style: none;
     position: relative;
     margin-left: 2em;
     min-height: 30px;
-    margin-bottom: 1em; }
-    article.programme section .excerpt li:before {
+    margin-bottom: 1em;
+    font-size: 1.3em;
+    font-weight: 500; }
+    article.programme section .excerpt li:before, article.trainer section .excerpt li:before {
       content: ' ';
       background: transparent url("../img/check.svg") no-repeat top left/2em;
       padding: 0;
@@ -2039,9 +2043,9 @@ article.programme section .excerpt {
       width: 2em;
       height: 2em;
       display: inline-block; }
-    article.programme section .excerpt li:before {
+    article.programme section .excerpt li:before, article.trainer section .excerpt li:before {
       left: -3em; }
-article.programme .badge {
+article.programme .badge, article.trainer .badge {
   position: absolute;
   z-index: 10;
   top: auto;
@@ -2055,9 +2059,9 @@ article.programme .badge {
   -ms-transform: rotate(8deg);
   -o-transform: rotate(8deg);
   transform: rotate(8deg); }
-article.programme:first-child header {
+article.programme:first-child header, article.trainer:first-child header {
   margin-bottom: 5em; }
-article.programme:first-child .badge {
+article.programme:first-child .badge, article.trainer:first-child .badge {
   bottom: -20% !important;
   left: -20% !important;
   -webkit-transform: rotate(-12deg);
@@ -2066,9 +2070,9 @@ article.programme:first-child .badge {
   -o-transform: rotate(-12deg);
   transform: rotate(-12deg);
   font-size: 36px; }
-article.programme:last-child header {
+article.programme:last-child header, article.trainer:last-child header {
   margin-bottom: 5em; }
-article.programme:last-child .badge {
+article.programme:last-child .badge, article.trainer:last-child .badge {
   left: 50% !important;
   bottom: -20% !important;
   -webkit-transform: rotate(3deg);
@@ -2078,41 +2082,52 @@ article.programme:last-child .badge {
   transform: rotate(3deg);
   font-size: 1.6em; }
 
-.single.single-programme .widget-area {
-  display: none;
-  /** Shame***/ }
-.single article.programme .thumbnail {
-  position: relative;
-  width: 23.40426%;
-  float: left;
-  margin-right: 2.12766%;
-  -webkit-transform: rotate(-5deg);
-  -moz-transform: rotate(-5deg);
-  -ms-transform: rotate(-5deg);
-  -o-transform: rotate(-5deg);
-  transform: rotate(-5deg); }
-  .single article.programme .thumbnail ~ .post_content {
-    width: 74.46809%;
-    float: right;
+.single {
+  /*    article.trainer{
+          .thumbnail{
+              @include span(last 5 of 12);
+              @include transform(rotate(5deg));
+              ~.post_content{
+                  @include span(7 of 12); 
+              }
+          }
+      }*/ }
+  .single.single-programme .widget-area {
+    display: none;
+    /** Shame***/ }
+  .single article.programme .thumbnail, .single article.trainer .thumbnail {
+    position: relative; }
+  .single article.programme .post_content, .single article.trainer .post_content {
+    width: 100%;
+    float: left;
+    margin-left: 0;
     margin-right: 0; }
-.single article.programme .post_content {
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0; }
-  .single article.programme .post_content [class*="list"] {
-    margin-bottom: 2em !important;
-    padding-bottom: 1em !important;
-    border-bottom: 1px dotted #ababab; }
-.single article.programme .badge {
-  position: absolute;
-  left: 15% !important;
-  bottom: -35% !important;
-  -webkit-transform: rotate(-15deg);
-  -moz-transform: rotate(-15deg);
-  -ms-transform: rotate(-15deg);
-  -o-transform: rotate(-15deg);
-  transform: rotate(-15deg); }
+    .single article.programme .post_content [class*="list"], .single article.trainer .post_content [class*="list"] {
+      margin-bottom: 2em !important;
+      padding-bottom: 1em !important;
+      border-bottom: 1px dotted #ababab; }
+  .single article.programme .badge, .single article.trainer .badge {
+    position: absolute;
+    left: 15% !important;
+    bottom: -35% !important;
+    -webkit-transform: rotate(-15deg);
+    -moz-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    -o-transform: rotate(-15deg);
+    transform: rotate(-15deg); }
+  .single article.programme .thumbnail, .single article.trainer .thumbnail {
+    width: 31.91489%;
+    float: left;
+    margin-right: 2.12766%;
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    transform: rotate(-5deg); }
+    .single article.programme .thumbnail ~ .post_content, .single article.trainer .thumbnail ~ .post_content {
+      width: 65.95745%;
+      float: right;
+      margin-right: 0; }
 
 #tabbed ul {
   list-style-type: none;
@@ -2167,9 +2182,9 @@ article.programme:last-child .badge {
   display: inline-block; }
 
 /**
- * Captions
+ * Captions, Image style
  */
-.wp-caption {
+.wp-caption, .thumbnail {
   margin-bottom: 16px;
   max-width: 100%;
   padding: 1em;
@@ -2179,28 +2194,28 @@ article.programme:last-child .badge {
   background: white;
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2); }
-  .wp-caption img[class*="wp-image-"] {
+  .wp-caption img, .thumbnail img {
     display: block;
     margin: 0 auto;
     -webkit-box-shadow: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
     box-shadow: inset 1px 1px 5px 0 rgba(0, 0, 0, 0.5); }
-  .wp-caption .wp-caption-text {
+  .wp-caption .wp-caption-text, .wp-caption .thumbnail-caption, .thumbnail .wp-caption-text, .thumbnail .thumbnail-caption {
     text-align: left;
     font-family: "Schoolbell", cursive;
-    color: #d14491;
+    color: #d14491 !important;
     border-bottom: 0;
     padding: 1em 0;
-    text-align: center;
+    text-align: center !important;
     line-height: 1;
-    font-size: 2em; }
-  .wp-caption.alignleft {
+    font-size: 1.6em; }
+  .wp-caption.alignleft, .thumbnail.alignleft {
     margin-right: 16px;
     -webkit-transform: rotate(-8deg);
     -moz-transform: rotate(-8deg);
     -ms-transform: rotate(-8deg);
     -o-transform: rotate(-8deg);
     transform: rotate(-8deg); }
-    .wp-caption.alignleft:before {
+    .wp-caption.alignleft:before, .thumbnail.alignleft:before {
       -webkit-transform: scale(-1, 1) rotate(24deg);
       -moz-transform: scale(-1, 1) rotate(24deg);
       -ms-transform: scale(-1, 1) rotate(24deg);
@@ -2208,14 +2223,14 @@ article.programme:last-child .badge {
       transform: scale(-1, 1) rotate(24deg);
       top: 50%;
       right: -250px; }
-  .wp-caption.alignright {
+  .wp-caption.alignright, .thumbnail.alignright {
     margin-left: 16px;
     -webkit-transform: rotate(5deg);
     -moz-transform: rotate(5deg);
     -ms-transform: rotate(5deg);
     -o-transform: rotate(5deg);
     transform: rotate(5deg); }
-    .wp-caption.alignright:before {
+    .wp-caption.alignright:before, .thumbnail.alignright:before {
       -webkit-transform: rotate(2deg);
       -moz-transform: rotate(2deg);
       -ms-transform: rotate(2deg);
