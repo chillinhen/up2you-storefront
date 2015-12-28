@@ -19,13 +19,6 @@ get_header();
             ?></h2>
     </header>
     <main id="main" class="site-main" role="main">
-        <?php while (have_posts()) : the_post(); ?>
-            <div class="col-full">
-                <div id="primary" class="content-area">
-                    <?php the_content(); ?>
-                </div>
-            </div>
-        <?php endwhile; ?>
         <!-- Trainer Thumbns -->
         <?php
         $filter = array(
@@ -42,7 +35,7 @@ get_header();
             do_action('storefront_loop_before');
 
             while ($trainer->have_posts()) : $trainer->the_post();
-                get_template_part('content', 'single');
+                get_template_part('content', 'trainer');
                 
                 endwhile; wp_reset_query(); ?>
         <?php else : ?>
@@ -50,11 +43,14 @@ get_header();
             <?php get_template_part('content', 'none'); ?>
 
         <?php endif; ?>
-            <?php if (get_field('conclusion')) : ?>
+        <!-- Eigentlicher Post -->
+                <?php while (have_posts()) : the_post(); ?>
             <div class="col-full">
-            <?php echo the_field('conclusion'); ?>
+                <div id="primary" class="content-area check-list">
+                    <?php the_content(); ?>
+                </div>
             </div>
-<?php endif; ?>
+        <?php endwhile; ?>
     </main>
 </div>
 

@@ -7,7 +7,7 @@ $post = get_field("post");
     <div id="cta-anchor" class="parallax" style="background-image: url('<?php echo ($url) ? $url : ''; ?>');">
         <div class="col-full">
             <?php if ($frage) : ?>
-                <h2 class="claim"><?php echo $frage; ?></h2>
+                <h2 class="question"><?php echo $frage; ?></h2>
             <?php endif; ?>
             <?php
             if ($post) :

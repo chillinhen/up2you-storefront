@@ -44,6 +44,6 @@
             <?php if( is_home() || is_front_page() ) : ?>
             <?php get_template_part('partials/banner', 'home'); ?>
             <?php else: ?>
-             <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
+            <?php get_template_part('partials/banner', 'other'); ?>
            <?php endif; ?>
 

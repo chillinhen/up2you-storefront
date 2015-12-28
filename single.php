@@ -15,7 +15,7 @@ get_header();
         elseif ( is_singular( 'erfolgsstories' ) ) :
             get_template_part('content', 'erfolgsstories');
         elseif ( is_singular( 'trainer' ) ) :
-            get_template_part('content', 'trainer');
+            get_template_part('single', 'trainer');
         else : ?>
             <main id="main" class="site-main" role="main">
                 <?php

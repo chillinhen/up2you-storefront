@@ -3,7 +3,7 @@ add_action('after_setup_theme', 'sf_child_theme_setup');
 
 function sf_child_theme_setup() {
         // Add Translation Option
-    load_theme_textdomain('storefront-child-theme-master', get_stylesheet_directory() . '/languages');
+    load_theme_textdomain('storefront', get_template_directory() . '/languages');
 
     $locale = get_locale();
     $locale_file = get_stylesheet_directory_uri() . "/languages/$locale.php";
@@ -13,7 +13,7 @@ function sf_child_theme_setup() {
         if (!is_admin()) {
 
             function theme_enqueue_styles() {
-                wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+                wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');              //wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/bower_components/bootstrap/css/bootstrap.css');
                 wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/css/screen.css', array('parent-style')
                 );
                 //wp_dequeue_style( 'storefront-woocommerce-style', get_template_directory_uri() . '/inc/woocommerce/css/woocommerce.css', $storefront_version );
@@ -31,6 +31,7 @@ function sf_child_theme_setup() {
         if (!is_admin()) {
 
             function theme_enqueue_scripts() {
+                //wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/bower_components/bootstrap/js/bootstrap.js');
                 wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), '1.2', true);
             }
 
@@ -96,4 +97,27 @@ if (!function_exists('storefront_child_credit')) {
 
 //Programme Hooks
 add_action( 'storefront_single_programme', 'storefront_post_content',	10 );
+
+//Thumbnail captions
+function wpse_138126_thumbnail_caption( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
+    if ( $post = get_post( $post_thumbnail_id ) ) {
+        if ( $size = wp_get_attachment_image_src( $post->ID, $size ) )
+            $width = $size[1];
+        else
+            $width = 0;
+
+        $html = img_caption_shortcode(
+            array(
+                'caption' => trim( "$post->post_excerpt $post->post_content" ),
+                'align'   => 'alignright',
+                'width'   => $width,
+            ),
+            $html       
+        );
+    }
+
+    return $html;
+}
+
+add_filter( 'post_thumbnail_html', 'wpse_138126_thumbnail_caption', 10, 5 );
 ?>

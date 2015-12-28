@@ -1532,7 +1532,7 @@ dl.variation {
 	.single-product {
 		div.product {
 			.images {
-				@include span(4 of 9);
+				@include span(3 of 9);
 				margin-bottom: 3.631em;
 
 				.thumbnails {

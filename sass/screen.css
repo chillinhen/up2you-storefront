@@ -985,8 +985,7 @@ a {
 
   .content-area,
   .widget-area {
-    margin-bottom: 2.618em;
-    margin-top: 2em; }
+    margin-bottom: 2.618em; }
     .page-template-template-homepage-php .content-area, .page-template-template-homepage-php
     .widget-area {
       margin-top: 0em; }
@@ -1862,7 +1861,7 @@ article .shopping-list {
   width: 170px;
   -webkit-border-radius: 85px;
   border-radius: 85px;
-  background: transparent;
+  background-color: transparent;
   -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -2021,12 +2020,12 @@ article .shopping-list {
   .banner .claim:after {
     content: ' '; }
 
-article.programme > header {
+article.programme > header, article.trainer > header {
   position: relative;
   margin-bottom: 5em; }
-article.programme section .excerpt {
+article.programme section .excerpt, article.trainer section .excerpt {
   padding: 0 2em 0 0; }
-  article.programme section .excerpt li {
+  article.programme section .excerpt li, article.trainer section .excerpt li {
     list-style: none;
     position: relative;
     margin-left: 2em;
@@ -2034,7 +2033,7 @@ article.programme section .excerpt {
     margin-bottom: 1em;
     font-size: 1.3em;
     font-weight: 500; }
-    article.programme section .excerpt li:before {
+    article.programme section .excerpt li:before, article.trainer section .excerpt li:before {
       content: ' ';
       background: transparent url("../img/check.svg") no-repeat top left/2em;
       padding: 0;
@@ -2044,9 +2043,9 @@ article.programme section .excerpt {
       width: 2em;
       height: 2em;
       display: inline-block; }
-    article.programme section .excerpt li:before {
+    article.programme section .excerpt li:before, article.trainer section .excerpt li:before {
       left: -3em; }
-article.programme .badge {
+article.programme .badge, article.trainer .badge {
   position: absolute;
   z-index: 10;
   top: auto;
@@ -2060,9 +2059,9 @@ article.programme .badge {
   -ms-transform: rotate(8deg);
   -o-transform: rotate(8deg);
   transform: rotate(8deg); }
-article.programme:first-child header {
+article.programme:first-child header, article.trainer:first-child header {
   margin-bottom: 5em; }
-article.programme:first-child .badge {
+article.programme:first-child .badge, article.trainer:first-child .badge {
   bottom: -20% !important;
   left: -20% !important;
   -webkit-transform: rotate(-12deg);
@@ -2071,9 +2070,9 @@ article.programme:first-child .badge {
   -o-transform: rotate(-12deg);
   transform: rotate(-12deg);
   font-size: 36px; }
-article.programme:last-child header {
+article.programme:last-child header, article.trainer:last-child header {
   margin-bottom: 5em; }
-article.programme:last-child .badge {
+article.programme:last-child .badge, article.trainer:last-child .badge {
   left: 50% !important;
   bottom: -20% !important;
   -webkit-transform: rotate(3deg);
@@ -2086,30 +2085,18 @@ article.programme:last-child .badge {
 .single.single-programme .widget-area {
   display: none;
   /** Shame***/ }
-.single article.programme .thumbnail {
-  position: relative;
-  width: 23.40426%;
-  float: left;
-  margin-right: 2.12766%;
-  -webkit-transform: rotate(-5deg);
-  -moz-transform: rotate(-5deg);
-  -ms-transform: rotate(-5deg);
-  -o-transform: rotate(-5deg);
-  transform: rotate(-5deg); }
-  .single article.programme .thumbnail ~ .post_content {
-    width: 74.46809%;
-    float: right;
-    margin-right: 0; }
-.single article.programme .post_content {
+.single article.programme .thumbnail, .single article.trainer .thumbnail {
+  position: relative; }
+.single article.programme .post_content, .single article.trainer .post_content {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0; }
-  .single article.programme .post_content [class*="list"] {
+  .single article.programme .post_content [class*="list"], .single article.trainer .post_content [class*="list"] {
     margin-bottom: 2em !important;
     padding-bottom: 1em !important;
     border-bottom: 1px dotted #ababab; }
-.single article.programme .badge {
+.single article.programme .badge, .single article.trainer .badge {
   position: absolute;
   left: 15% !important;
   bottom: -35% !important;
@@ -2118,6 +2105,19 @@ article.programme:last-child .badge {
   -ms-transform: rotate(-15deg);
   -o-transform: rotate(-15deg);
   transform: rotate(-15deg); }
+.single article.programme .thumbnail, .single article.trainer .thumbnail {
+  width: 31.91489%;
+  float: left;
+  margin-right: 2.12766%;
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  transform: rotate(-5deg); }
+  .single article.programme .thumbnail ~ .post_content, .single article.trainer .thumbnail ~ .post_content {
+    width: 65.95745%;
+    float: right;
+    margin-right: 0; }
 
 #tabbed ul {
   list-style-type: none;

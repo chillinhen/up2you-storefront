@@ -4,22 +4,9 @@ jQuery(document).ready(function ($) {
         $(this).wrapInner('<span></span>');
     });
     $('.buttongroup a').addClass('button');
-    $('.buttongroup div:nth-child(2n)').css('background','red');
     
-    
-    //smooth scrolling
-    $('a[href*=#]:not([href=#])').click(function () {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-                $('html,body').animate({
-                    scrollTop: target.offset().top
-                }, 800);
-                return false;
-            }
-        }
-    });
+    //little shop layout tweaking
+    $('body.woocommerce-page .content-area').addClass('col-full');
     
     //tabbed Content - stories
     $("ul#tabs li:first-child, ul#tab li:first-child").addClass('active');
