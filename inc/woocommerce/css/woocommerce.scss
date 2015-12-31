@@ -5,7 +5,7 @@
 /**
  * Imports
  */
-@import 'bourbon';
+@import '../../../sass/bourbon/bourbon';
 @import '../../../sass/utils/variables';
 @import '../../../sass/utils/mixins';
 @import '../../../bower_components/susy/sass/susy';
@@ -64,7 +64,7 @@
 			width: 100%;
 			text-align: center;
 			text-indent: 0;
-                        font-size: 2em;
+                        font-size: 1em;
 		}
 
 		span {
@@ -74,7 +74,7 @@
 
 	.widget_shopping_cart {
 		display: none;
-		background-color: #2c2d33;
+		background-color: #fff;
 
 		.product_list_widget {
 			max-height: 15em;
@@ -246,6 +246,7 @@ ul.products {
 
 			.button {
 				float: right;
+                                max-width: 200px;
 			}
 		}
 
@@ -291,7 +292,7 @@ ul.products {
 			margin-top: -.618em;
 
 			a {
-				font-size: .857em;
+				font-size: $base-font-size;
 			}
 
 			.star-rating {
@@ -300,7 +301,7 @@ ul.products {
 		}
 
 		.product_meta {
-			font-size: .857em;
+			font-size: $base-font-size;
 
 			.sku_wrapper,
 			.posted_in,
@@ -1157,6 +1158,7 @@ p.stars {
 		list-style: none;
 		margin-left: 0;
 		text-align: center;
+                
 
 		li {
 			display: inline-block;
@@ -1166,6 +1168,8 @@ p.stars {
 			&.active {
 				a {
 					color: $color_body;
+                                        background: white;
+                                        font-weight: bold;
 				}
 
 				&:after {
@@ -1925,11 +1929,11 @@ dl.variation {
 	.storefront-full-width-content {
 		.woocommerce-tabs {
 			ul.tabs {
-				@include span(4 of 12);
+				@include span(6 of 12);
 			}
 
 			.panel {
-				@include span(last 8 of 12);
+				@include span(last 6 of 12);
 				margin-bottom: 3.631em;
 			}
 		}
@@ -1942,17 +1946,21 @@ dl.variation {
 		padding-bottom: 2.618em;
 
 		ul.tabs {
-			@include span(3 of 9);
+			@include container;
 		  	text-align: left;
-
+                        margin-bottom:0;
 		  	li {
-		  		display: block;
-		  		margin: 0;
-		  		border-bottom: 1px dotted $color_border;
+		  		
+                                @include span(3 of 12);
+		  		margin: 0 2px 0 0;
+		  		border: 2px solid $color_border;
+                                border-bottom: 0;
 
 		  		a {
-		  			padding: 1em 0;
+		  			padding:.5em 1em;
 		  			display: block;
+                                        background: $color_border;
+                                        color:$color_body;
 		  		}
 
 		  		&.active {
@@ -1963,14 +1971,17 @@ dl.variation {
 		  				top: 50%;
 		  				content: "\f105";
 		  				margin-top: -.5em;
+                                                content: '';
 		  			}
 		  		}
 		  	}
 		}
 
 		.panel {
-			@include span(last 6 of 9);
-		  	margin-top: 0;
+			@include container;
+		  	margin-top: -2px;
+                        border:2px solid $color_border;
+                        padding:1em;
 		}
 	}
 }

@@ -173,7 +173,8 @@
 		li {
 			&.current-menu-item {
 				> a {
-					color: $color_body;
+					color: $color_primary;
+                                        border-color:$color_body !important;
 				}
 			}
 		}

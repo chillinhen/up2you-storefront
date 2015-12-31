@@ -181,16 +181,17 @@ article{
         }
     }
 }
-    [class*="list"]{
-        ul{
-            @extend %reset;
-        }
-        li {
+[class*="list"]{
+    ul{
+        @extend %reset;
+        > li {
             @include check-list (url('../img/check.svg'),1.8em,0 .2em, 0, -3em);
             line-height: 2;
             list-style: none;
         }
     }
+
+}
     .shopping-list{
         background-color: $color-primary;
         color:white;
@@ -214,7 +215,7 @@ article{
     @include shadow(20px);
     overflow:hidden;
     background:transparent url('../img/badge.svg') no-repeat center center / 100%;
-    font-size: 1.75em;
+    font-size: 1.6em;
     text-align: center;
     padding:12%;
     color:white ;
@@ -424,59 +425,55 @@ article.programme{
 }
 
 .single{
-    &.single-programme{
+    
+    &.single-programme, single-erfolgsstories{
+        padding-top:2em;
         .widget-area{
             display:none;/** Shame***/
         }
     }
 }
-    article.programme{
-        .thumbnail{
-            position: relative;
-        }
-        .post_content{
-            @include span(full);
-            [class*="list"] {
-                margin-bottom:2em !important;
-                padding-bottom: 1em !important;
-                border-bottom: 1px dotted $color-light-grey;
-            }
-        }
-        .badge{
-            position: absolute;
-            left: 15% !important;
-            bottom: -35% !important;
-            @include transform(rotate(-15deg));
+article.programme{
+    .thumbnail{
+        position: relative;
+    }
+    .post_content{
+        @include span(full);
+        [class*="list"] {
+            margin-bottom:2em !important;
+            padding-bottom: 1em !important;
+            border-bottom: 1px dotted $color-light-grey;
         }
     }
-    article.has-post-thumbnail{
-        .thumbnail{
+    .badge{
+        position: absolute;
+        left: 15% !important;
+        bottom: -35% !important;
+        @include transform(rotate(-15deg));
+    }
+}
+    .single article.programme, article.trainer, article.erfolgsstories, .single article.erfolgsstories{
+.thumbnail{
             @include span(4 of 12);
-            .wp-caption{
-                @include transform(rotate(-5deg));
-            }
-
+            @include transform(rotate(-5deg));
             ~.post_content{
                 @include span(8 of 12); 
             }
         }
-        &:nth-child(even){
+    }
+    .single article.programme, article.trainer:nth-child(even), article.erfolgsstories:nth-child(even){
             .thumbnail{
                 ~.post_content{
                     @include span(last);  
                 }
             }
         }
-        &:nth-child(odd){
+    article.trainer:nth-child(odd),article.erfolgsstories:nth-child(odd){
             .thumbnail{
                 @include span(last); 
-                .wp-caption{
                     @include transform(rotate(5deg));
                 }
             }
-        }
-    }
-
 #tabbed{
     ul {
         list-style-type: none;

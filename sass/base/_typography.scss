@@ -53,11 +53,19 @@ h6{
     }
     
 }
-#site-navigation a{
-    font-family: $header-font!important;
-    font-size: 18px;
-    font-style: italic;
-    margin-left: 1em;
+#site-navigation {
+    a{
+        font-family: $header-font!important;
+        font-size: 18px;
+        font-style: italic;
+        margin-left: 1em;
+        padding:16px 0 11px 0;
+        border-bottom: 5px solid white;
+        &:hover, &:focus {
+            border-color: black;
+        }
+    }
+
 }
 .badge, [id*="message"] *{
     font-family: $handwritten-font;
@@ -117,6 +125,10 @@ ul {
 
 ol {
     list-style: decimal;
+}
+
+li {
+    list-style-position: inside;
 }
 
 li > ul,

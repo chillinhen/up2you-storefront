@@ -17,7 +17,10 @@
 /**
  * Captions, Image style
  */
-.wp-caption{
+.programme .thumbnail{
+    margin:0 1em;
+}
+.wp-caption, .programme .thumbnail{
     margin-bottom: $vspacing;
     max-width: 100%;
     padding:1em;

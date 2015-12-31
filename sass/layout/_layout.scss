@@ -89,6 +89,7 @@
               font-weight: bold;
               color:black;
               padding:$vspacing !important;
+              > span {font-weight: inherit;}
               .amount, .count {
                   font-weight:bold !important;
               }
@@ -98,11 +99,13 @@
             }
             &:hover, &:focus{
                 a.cart-contents, {
-                    background:$color_secondary;
-                    color:white;
+                    background:white;
+                    color:$color_body;
                 }
                 .widget_shopping_cart{
                     font-size: $base-font-size;
+                    border-top:5px solid $color_primary;
+                    margin-top:-5px !important;
                 }
             }
         }

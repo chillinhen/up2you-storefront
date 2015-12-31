@@ -14,6 +14,9 @@ form {
             margin-bottom: 0 !important;
         }
     }
+    #review_form &{
+        width:50%;
+    }
 
 }
 
@@ -146,7 +149,7 @@ textarea,
 	}
         form &{
             width:100%;
-            padding:.75em 0 .75em 2em;
+            padding:.5em 0 .5em 0 !important;
         }
 }
 

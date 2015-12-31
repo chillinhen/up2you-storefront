@@ -16,7 +16,7 @@ function sf_child_theme_setup() {
                 wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');              //wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/bower_components/bootstrap/css/bootstrap.css');
                 wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/css/screen.css', array('parent-style')
                 );
-                //wp_dequeue_style( 'storefront-woocommerce-style', get_template_directory_uri() . '/inc/woocommerce/css/woocommerce.css', $storefront_version );
+                wp_dequeue_style( 'storefront-woocommerce-style', get_template_directory_uri() . '/inc/woocommerce/css/woocommerce.css', $storefront_version );
                  wp_enqueue_style( 'storefront-woocommerce-child-style', get_stylesheet_directory_uri() . '/inc/woocommerce/css/woocommerce.css', array('child-style') );
                 wp_enqueue_style('googlefonts', 'https://fonts.googleapis.com/css?family=Josefin+Slab:400,300italic,300,400italic,600,700,600italic,700italic|Josefin+Sans:400,600,400italic,600italic,700,700italic|Merriweather:400,300,300italic,700,400italic,700italic|Schoolbell', 'style', '1.0', 'all', array('child-style'));
                 wp_enqueue_style('fontawseome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', 'style', '4.4.0', 'all', array('child-style'));
