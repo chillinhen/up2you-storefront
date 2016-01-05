@@ -37,6 +37,9 @@ function sf_child_theme_setup() {
 
         }
     }  
+
+//remove some parent actions
+// Header    
 remove_action( 'storefront_header', 'storefront_skip_links',                    0 );
 remove_action( 'storefront_header', 'storefront_social_icons',			10 );
 remove_action( 'storefront_header', 'storefront_site_branding',			20 );
@@ -46,6 +49,7 @@ remove_action( 'storefront_header', 'storefront_primary_navigation',		50 );
 remove_action( 'storefront_header', 'storefront_header_cart',                   60 );
 }
 
+// add some child actions
 //child header
 add_action( 'storefront_child_branding', 'storefront_site_branding',0 );
 add_action( 'storefront_child_nav', 'storefront_primary_navigation',10 );

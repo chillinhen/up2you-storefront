@@ -176,7 +176,7 @@
 article{
     ul{
         list-style: none;
-        li{
+        li:not(.payment_method_paypal){
             @include default-list;
         }
     }

@@ -169,7 +169,6 @@ ul.products {
 		h3 {
 			font-size: 1.1em;
                         font-family:$header-font;
-                        color:red;
 		}
 
 		.star-rating {
@@ -680,7 +679,7 @@ table.cart {
 
 		input {
 			display: block;
-			width: 100%;
+			width: 50%;
 			margin: .236em 0;
 		}
 	}
@@ -728,6 +727,10 @@ a.remove {
 		text-indent: 0;
 		text-align: center;
 		font-weight: 400;
+                
+                .woocommerce-cart & {
+                    font-size: 1.6em;
+                }
 	}
 }
 
@@ -765,7 +768,7 @@ form.checkout {
 				float: right;
 				border: 0;
 				padding: 0;
-				max-height: 1.618em;
+				max-height: 3em;
 			}
 
 			&:last-child {
@@ -854,7 +857,7 @@ form.checkout {
 		width: 100%;
 
 		.button {
-			font-size: 1.387em;
+			font-size: 1.1em;
 			width: 100%;
 			white-space: pre-wrap;
 		}
@@ -1197,6 +1200,8 @@ p.no-comments {
 	@include clearfix;
 	margin-bottom: 2.618em;
 	background-color: $success;
+        font-weight: bold;
+        font-size: larger;
 	margin-left: 0;
 	color: #fff;
 	clear: both;
@@ -1656,7 +1661,7 @@ dl.variation {
 				display: table-cell;
 
 				img {
-					max-width: 3.631em;
+					max-width: 150px;
 					height: auto;
 					border: .327em solid #fff;
 				}
@@ -1698,6 +1703,13 @@ dl.variation {
 				padding: .618em;
 			}
 		}
+                .product-name,
+                span.amount{
+                    font-size: larger;
+                }
+                .product-subtotal > span{
+                    font-weight: bold;
+                }
 
 		td.actions {
 			text-align: right;
@@ -1803,6 +1815,7 @@ dl.variation {
 		padding-top: .618em;
 		border-width: 3px 3px 0 3px;
 		@include gutters(inside);
+                text-align: center;
 	}
 
 	#order_review {
@@ -1867,13 +1880,18 @@ dl.variation {
 		}
 
 		#order_review {
-			font-size: .857em;
+			font-size: 1em;
 		}
 	}
 
 	#order_review {
 		.shop_table {
-			margin-bottom: 2.618em;
+			margin:0 5% 2.618em 5%;
+                        width:90%;
+                        
+                        td {
+                            padding:.5em 0;
+                        }
 		}
 	}
 

@@ -1295,11 +1295,11 @@ input[type="submit"],
     .added_to_cart.disabled:hover,
     .added_to_cart:disabled:hover {
       opacity: 0.5 !important; }
-  form button, form
-  input[type="button"], form
-  input[type="reset"], form
-  input[type="submit"], form
-  .button, form
+  .wpcf7-form button, .wpcf7-form
+  input[type="button"], .wpcf7-form
+  input[type="reset"], .wpcf7-form
+  input[type="submit"], .wpcf7-form
+  .button, .wpcf7-form
   .added_to_cart {
     width: 100% !important; }
 
@@ -1362,7 +1362,7 @@ textarea,
   textarea, form
   .input-text {
     width: 100%;
-    padding: .5em 0 .5em 0 !important; }
+    /*            padding:.5em 0 .5em 0 !important;*/ }
 
 textarea {
   overflow: auto;
@@ -1798,10 +1798,10 @@ fieldset {
 
 article ul {
   list-style: none; }
-  article ul li {
+  article ul li:not(.payment_method_paypal) {
     position: relative;
     margin-left: 2em; }
-    article ul li:before {
+    article ul li:not(.payment_method_paypal):before {
       font-family: 'FontAwesome';
       content: "\f069";
       color: #d14491;
