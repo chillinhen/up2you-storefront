@@ -687,6 +687,31 @@ h6 {
   h5, .full-size-bar
   h6 {
     font-style: normal; }
+  .related_post h1, .related_post
+  h2, .related_post
+  h3, .related_post
+  h4, .related_post
+  h5, .related_post
+  h6 {
+    padding: 1em;
+    text-align: center; }
+    .related_post h1 > *, .related_post
+    h2 > *, .related_post
+    h3 > *, .related_post
+    h4 > *, .related_post
+    h5 > *, .related_post
+    h6 > * {
+      color: #fff !important; }
+    .related_post h1 span, .related_post
+    h2 span, .related_post
+    h3 span, .related_post
+    h4 span, .related_post
+    h5 span, .related_post
+    h6 span {
+      font-size: smaller;
+      display: block;
+      line-height: 1;
+      margin-top: 1em; }
 
 #site-navigation a {
   font-family: "Merriweather", georgia, times new roman, serif !important;
@@ -1831,7 +1856,7 @@ article ul {
     display: inline-block; }
 
 .shopping-list {
-  background-color: #d14491;
+  background-color: #e596c1;
   color: white;
   padding: 1em;
   margin: 1em 0;
@@ -1880,13 +1905,6 @@ article ul {
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
-  height: 170px;
-  width: 170px;
-  -webkit-border-radius: 85px;
-  border-radius: 85px;
-  background-color: transparent;
-  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
   overflow: hidden;
   background: transparent url("../img/badge.svg") no-repeat center center/100%;
   font-size: 1.6em;
@@ -2066,12 +2084,12 @@ article ul {
   bottom: 0;
   right: 0; }
 
-article.programme > header {
+body.home article.programme > header {
   position: relative;
   margin-bottom: 5em; }
-article.programme section .excerpt {
+body.home article.programme section .excerpt {
   padding: 0 2em 0 0; }
-  article.programme section .excerpt li {
+  body.home article.programme section .excerpt li {
     list-style: none;
     position: relative;
     margin-left: 2em;
@@ -2080,7 +2098,7 @@ article.programme section .excerpt {
     margin-bottom: 1em;
     font-size: 1em;
     font-weight: 500; }
-    article.programme section .excerpt li:before {
+    body.home article.programme section .excerpt li:before {
       content: ' ';
       background: transparent url("../img/check.svg") no-repeat 0 0.2em/1.8em;
       padding: 0;
@@ -2090,14 +2108,14 @@ article.programme section .excerpt {
       width: 1.8em;
       height: 1.8em;
       display: inline-block; }
-    article.programme section .excerpt li:before {
+    body.home article.programme section .excerpt li:before {
       left: -3em; }
-article.programme .badge {
+body.home article.programme .badge {
   position: absolute;
   z-index: 10;
   top: auto;
   left: auto;
-  bottom: -25%;
+  bottom: 0;
   right: 0;
   font-size: 28px;
   font-weight: bold;
@@ -2105,10 +2123,15 @@ article.programme .badge {
   -moz-transform: rotate(8deg);
   -ms-transform: rotate(8deg);
   -o-transform: rotate(8deg);
-  transform: rotate(8deg); }
-article.programme:first-child header {
+  transform: rotate(8deg);
+  height: 170px;
+  width: 170px;
+  -webkit-border-radius: 85px;
+  border-radius: 85px;
+  background-color: transparent; }
+body.home article.programme:first-child header {
   margin-bottom: 5em; }
-article.programme:first-child .badge {
+body.home article.programme:first-child .badge {
   bottom: -20% !important;
   left: -20% !important;
   -webkit-transform: rotate(-12deg);
@@ -2117,9 +2140,9 @@ article.programme:first-child .badge {
   -o-transform: rotate(-12deg);
   transform: rotate(-12deg);
   font-size: 36px; }
-article.programme:last-child header {
+body.home article.programme:last-child header {
   margin-bottom: 5em; }
-article.programme:last-child .badge {
+body.home article.programme:last-child .badge {
   left: 50% !important;
   bottom: -20% !important;
   -webkit-transform: rotate(3deg);
@@ -2135,18 +2158,18 @@ article.programme:last-child .badge {
     display: none;
     /** Shame***/ }
 
-article.programme .thumbnail {
+body.home article.programme .thumbnail {
   position: relative; }
-article.programme .post_content {
+body.home article.programme .post_content {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0; }
-  article.programme .post_content [class*="list"] {
+  body.home article.programme .post_content [class*="list"] {
     margin-bottom: 2em !important;
     padding-bottom: 1em !important;
     border-bottom: 1px dotted #ababab; }
-article.programme .badge {
+body.home article.programme .badge {
   position: absolute;
   left: 15% !important;
   bottom: -35% !important;
@@ -2156,7 +2179,15 @@ article.programme .badge {
   -o-transform: rotate(-15deg);
   transform: rotate(-15deg); }
 
-.single article.programme .thumbnail, article.trainer .thumbnail, article.erfolgsstories .thumbnail, .single article.erfolgsstories .thumbnail {
+.single article.programme .top-fold,
+article.trainer .top-fold,
+article.erfolgsstories .top-fold,
+.single article.erfolgsstories .top-fold {
+  position: relative; }
+.single article.programme .thumbnail,
+article.trainer .thumbnail,
+article.erfolgsstories .thumbnail,
+.single article.erfolgsstories .thumbnail {
   width: 31.91489%;
   float: left;
   margin-right: 2.12766%;
@@ -2165,14 +2196,154 @@ article.programme .badge {
   -ms-transform: rotate(-5deg);
   -o-transform: rotate(-5deg);
   transform: rotate(-5deg); }
-  .single article.programme .thumbnail ~ .post_content, article.trainer .thumbnail ~ .post_content, article.erfolgsstories .thumbnail ~ .post_content, .single article.erfolgsstories .thumbnail ~ .post_content {
-    width: 65.95745%;
-    float: left;
-    margin-right: 2.12766%; }
+.single article.programme .post_content,
+article.trainer .post_content,
+article.erfolgsstories .post_content,
+.single article.erfolgsstories .post_content {
+  width: 57.44681%;
+  float: left;
+  margin-right: 2.12766%; }
+  .single article.programme .post_content:after,
+  article.trainer .post_content:after,
+  article.erfolgsstories .post_content:after,
+  .single article.erfolgsstories .post_content:after {
+    clear: both;
+    content: ' ';
+    display: block; }
+.single article.programme .badge,
+article.trainer .badge,
+article.erfolgsstories .badge,
+.single article.erfolgsstories .badge {
+  position: absolute;
+  z-index: 10;
+  top: auto;
+  left: auto;
+  bottom: -25%;
+  right: 0;
+  font-size: 28px;
+  font-weight: bold;
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  -o-transform: rotate(8deg);
+  transform: rotate(8deg);
+  height: 80px;
+  width: 80px;
+  -webkit-border-radius: 40px;
+  border-radius: 40px;
+  background-color: transparent; }
+.single article.programme .bottom-fold,
+article.trainer .bottom-fold,
+article.erfolgsstories .bottom-fold,
+.single article.erfolgsstories .bottom-fold {
+  clear: both;
+  padding: 3em 1em 0 1em; }
+  .single article.programme .bottom-fold > [class*="-list"],
+  article.trainer .bottom-fold > [class*="-list"],
+  article.erfolgsstories .bottom-fold > [class*="-list"],
+  .single article.erfolgsstories .bottom-fold > [class*="-list"] {
+    margin-bottom: 3em;
+    padding-bottom: 3em;
+    border-bottom: 1px solid #ababab; }
+  .single article.programme .bottom-fold .cta-link,
+  article.trainer .bottom-fold .cta-link,
+  article.erfolgsstories .bottom-fold .cta-link,
+  .single article.erfolgsstories .bottom-fold .cta-link {
+    margin: 6em 3em 1em 3em;
+    text-align: center; }
 
-.single article.programme .thumbnail ~ .post_content, article.trainer:nth-child(even) .thumbnail ~ .post_content, article.erfolgsstories:nth-child(even) .thumbnail ~ .post_content {
-  float: right;
-  margin-right: 0; }
+.related {
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  box-align: stretch;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
+  -ms-align-items: stretch;
+  -o-align-items: stretch;
+  align-items: stretch;
+  -ms-flex-align: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  -o-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: start; }
+  .related .related_post {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin: 1em; }
+    article.programme .related .related_post {
+      -webkit-box-align: stretch;
+      -moz-box-align: stretch;
+      box-align: stretch;
+      -webkit-align-items: stretch;
+      -moz-align-items: stretch;
+      -ms-align-items: stretch;
+      -o-align-items: stretch;
+      align-items: stretch;
+      -ms-flex-align: stretch;
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -moz-box-orient: horizontal;
+      box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -moz-box-direction: normal;
+      box-direction: normal;
+      -webkit-flex-direction: row;
+      -moz-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-direction: row;
+      -webkit-box-pack: start;
+      -moz-box-pack: start;
+      box-pack: start;
+      -webkit-justify-content: flex-start;
+      -moz-justify-content: flex-start;
+      -ms-justify-content: flex-start;
+      -o-justify-content: flex-start;
+      justify-content: flex-start;
+      -ms-flex-pack: start; }
+      article.programme .related .related_post > * {
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        box-flex: 1;
+        -webkit-flex: 1;
+        -moz-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        background: #d14491; }
+      article.programme .related .related_post > .thumb {
+        overflow: hidden; }
 
 article.trainer:nth-child(odd) .thumbnail, article.erfolgsstories:nth-child(odd) .thumbnail {
   float: right;

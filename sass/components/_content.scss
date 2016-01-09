@@ -193,7 +193,7 @@ article{
 
 }
     .shopping-list{
-        background-color: $color-primary;
+        background-color: lighten($color-primary, 20%);
         color:white;
         padding:1em;
         margin:1em 0;
@@ -211,8 +211,6 @@ article{
     @include display(flex);
     @include align-items(center);
     @include justify-content(center);
-    @include circle(170px,transparent);
-    @include shadow(20px);
     overflow:hidden;
     background:transparent url('../img/badge.svg') no-repeat center center / 100%;
     font-size: 1.6em;
@@ -367,7 +365,7 @@ article{
         bottom:0;
         right:0;
 }
-article.programme{
+body.home article.programme{
     > header{
         position: relative;
         margin-bottom:5em;
@@ -394,11 +392,12 @@ article.programme{
         z-index: 10;
         top: auto;
         left: auto;
-        bottom: -25%;
+        bottom: 0;
         right: 0;
         font-size: 28px;
         font-weight:bold;
         @include transform(rotate(8deg));
+        @include badge(170px,transparent);
     }
     &:first-child{
         header {
@@ -433,7 +432,7 @@ article.programme{
         }
     }
 }
-article.programme{
+body.home article.programme{
     .thumbnail{
         position: relative;
     }
@@ -452,22 +451,76 @@ article.programme{
         @include transform(rotate(-15deg));
     }
 }
-    .single article.programme, article.trainer, article.erfolgsstories, .single article.erfolgsstories{
-.thumbnail{
-            @include span(4 of 12);
-            @include transform(rotate(-5deg));
-            ~.post_content{
-                @include span(8 of 12); 
+.single article.programme, 
+article.trainer, 
+article.erfolgsstories, 
+.single article.erfolgsstories{
+    .top-fold{
+       position: relative; 
+    }
+    .thumbnail{
+        @include span(4 of 12);
+        @include transform(rotate(-5deg));
+    }
+    .post_content{
+            
+            @include span(7 of 12); 
+            &:after {
+                clear:both;
+                content: ' ';
+                display: block;
+            }
+        }
+    .badge{
+        position: absolute;
+        z-index: 10;
+        top: auto;
+        left: auto;
+        bottom: -25%;
+        right: 0;
+        font-size: 28px;
+        font-weight:bold;
+        @include transform(rotate(8deg));
+        @include badge(80px,transparent);
+    }
+    .bottom-fold {
+        clear:both;
+        padding:3em 1em 0 1em;
+        > [class*="-list"]{
+            margin-bottom:3em;
+            padding-bottom: 3em;
+            border-bottom:1px solid $color-light-grey;
+        }
+        .cta-link {
+            margin:6em 3em 1em 3em;
+            text-align: center;
+        }
+    }
+}
+.related{
+    @include align-items(stretch);
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(flex-start);
+    .related_post{
+        @include flex(1);
+        margin:1em;
+        article.programme & {
+            @include align-items(stretch);
+            @include display(flex);
+            @include flex-direction(row);
+            @include justify-content(flex-start);
+            > * {
+                @include flex(1); 
+                background:$color-primary;
+            }
+            > .thumb{
+                overflow:hidden;
             }
         }
     }
-    .single article.programme, article.trainer:nth-child(even), article.erfolgsstories:nth-child(even){
-            .thumbnail{
-                ~.post_content{
-                    @include span(last);  
-                }
-            }
-        }
+}
+
     article.trainer:nth-child(odd),article.erfolgsstories:nth-child(odd){
             .thumbnail{
                 @include span(last); 

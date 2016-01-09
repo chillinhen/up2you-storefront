@@ -121,7 +121,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
         }
     }
 }
-@mixin circle($scale,$color){
+@mixin badge($scale,$color){
     height:$scale;
     width:$scale;
     -webkit-border-radius: $scale/2;
