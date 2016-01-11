@@ -1181,6 +1181,29 @@ a {
     float: right;
     margin-right: 0; }
 
+.sh-link {
+  cursor: pointer; }
+  .sh-link:before {
+    color: #d14491;
+    text-align: center;
+    opacity: 1 !important;
+    font-size: 2em; }
+  .sh-link.sh-hide:before {
+    content: "";
+    font-family: "FontAwesome";
+    margin-right: .53em;
+    display: inline-block;
+    opacity: 0.35; }
+  .sh-link.sh-show:before {
+    content: "";
+    font-family: "FontAwesome";
+    margin-right: .53em;
+    display: inline-block;
+    opacity: 0.35; }
+
+.woocommerce-page .content-area {
+  margin: 2em auto !important; }
+
 /**
  * Forms
  */
@@ -1194,6 +1217,15 @@ form {
       margin-bottom: 0 !important; }
   #review_form form {
     width: 50%; }
+
+/**validation ***/
+span.wpcf7-not-valid-tip {
+  display: none !important; }
+
+div.wpcf7-response-output {
+  margin: 0;
+  background: #E51E56;
+  color: white; }
 
 button,
 input,
@@ -1388,6 +1420,16 @@ textarea,
   .input-text {
     width: 100%;
     /*            padding:.5em 0 .5em 0 !important;*/ }
+  input[type="text"].wpcf7-not-valid,
+  input[type="email"].wpcf7-not-valid,
+  input[type="url"].wpcf7-not-valid,
+  input[type="password"].wpcf7-not-valid,
+  input[type="search"].wpcf7-not-valid,
+  input[type="date"].wpcf7-not-valid,
+  textarea.wpcf7-not-valid,
+  .input-text.wpcf7-not-valid {
+    border-color: #E51E56;
+    border-width: 2px; }
 
 textarea {
   overflow: auto;
@@ -1856,9 +1898,6 @@ article ul {
     display: inline-block; }
 
 .shopping-list {
-  background-color: #e596c1;
-  color: white;
-  padding: 1em;
   margin: 1em 0;
   font-weight: bold;
   border: 0; }
@@ -2059,7 +2098,6 @@ article ul {
   font-family: "Schoolbell", cursive;
   font-weight: normal;
   line-height: 1;
-  color: white !important;
   font-size: 2.8em;
   -webkit-transform: rotate(-12deg);
   -moz-transform: rotate(-12deg);
@@ -2346,8 +2384,7 @@ article.erfolgsstories .bottom-fold,
         overflow: hidden; }
 
 article.trainer:nth-child(odd) .thumbnail, article.erfolgsstories:nth-child(odd) .thumbnail {
-  float: right;
-  margin-right: 0;
+  /*                @include span(last); */
   -webkit-transform: rotate(5deg);
   -moz-transform: rotate(5deg);
   -ms-transform: rotate(5deg);
@@ -2931,27 +2968,57 @@ video {
     padding: 1.618em;
     background-color: rgba(0, 0, 0, 0.025); }
 
-.sh-link {
-  cursor: pointer; }
-  .sh-link:before {
-    color: #d14491;
-    text-align: center;
-    opacity: 1 !important;
-    font-size: 2em; }
-  .sh-link.sh-hide:before {
-    content: "";
-    font-family: "FontAwesome";
-    margin-right: .53em;
-    display: inline-block;
-    opacity: 0.35; }
-  .sh-link.sh-show:before {
-    content: "";
-    font-family: "FontAwesome";
-    margin-right: .53em;
-    display: inline-block;
-    opacity: 0.35; }
+/** Modal Box functions**/
+#modalBox {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999999999;
+  opacity: 0;
+  -webkit-transition: opacity 100ms ease-in;
+  -moz-transition: opacity 100ms ease-in;
+  transition: opacity 100ms ease-in;
+  pointer-events: none; }
+  #modalBox:target {
+    opacity: 1;
+    pointer-events: auto; }
+  #modalBox .modal-dialog {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    width: 800px;
+    margin-left: -400px;
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    pointer-events: auto;
+    height: 600px; }
+    #modalBox .modal-dialog .close {
+      position: absolute;
+      top: .5em;
+      right: 2em; }
+    #modalBox .modal-dialog .claim {
+      position: absolute;
+      left: 50%;
+      top: 150px;
+      width: 300px;
+      margin-left: -230px;
+      color: #d14491;
+      font-size: 2em; }
+    #modalBox .modal-dialog .wpcf7 form {
+      background: white;
+      width: 300px !important;
+      float: right;
+      margin: 2em;
+      opacity: 1 !important; }
+  #modalBox:target .modal-dialog {
+    top: 15%; }
 
-.woocommerce-page .content-area {
-  margin: 2em auto !important; }
+/*** Modal Box Styling ***/
+.modal-dialog {
+  background: white url(../img/bg_modal-form.png) no-repeat bottom left/contain; }
 
 /*# sourceMappingURL=screen.css.map */

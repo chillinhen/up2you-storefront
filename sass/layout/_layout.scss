@@ -351,3 +351,26 @@ width:100%;
         }
     }
 }
+
+.sh-link{
+    cursor:pointer;
+    &:before{
+    color:$color-primary;
+    text-align:center;
+    opacity:1 !important;
+    font-size:2em;
+    }
+    &.sh-hide{
+         @include icon-style("\f055");
+    }
+    
+    &.sh-show{
+         @include icon-style("\f056");
+    }
+    
+}
+        .woocommerce-page{
+            .content-area {
+                margin:2em auto !important;
+            }
+        }

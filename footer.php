@@ -33,7 +33,7 @@
 	<?php do_action( 'storefront_after_footer' ); ?>
 
 </div><!-- #page -->
-
+<?php get_template_part('partials/modal', 'box'); ?>
 <?php wp_footer(); ?>
 
 </body>

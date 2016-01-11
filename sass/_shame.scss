@@ -1,22 +1,61 @@
-.sh-link{
-    cursor:pointer;
-    &:before{
-            color:$color-primary;
-    text-align:center;
-    opacity:1 !important;
-    font-size:2em;
+/** Modal Box functions**/
+#modalBox{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999999999;
+    opacity:0;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in;
+    pointer-events: none;
+    &:target {
+        opacity:1;
+        pointer-events: auto;
     }
-    &.sh-hide{
-         @include icon-style("\f055");
-    }
-    
-    &.sh-show{
-         @include icon-style("\f056");
-    }
-    
-}
-        .woocommerce-page{
-            .content-area {
-                margin:2em auto !important;
-            }
+    .modal-dialog {
+        position: absolute;
+        top:-100%;
+        left:50%;
+        width: 800px;
+        margin-left:-400px;
+        -webkit-transition: all 200ms ease-in;
+        -moz-transition: all 200ms ease-in;
+        transition: all 200ms ease-in;
+        pointer-events: auto;
+        height:600px;
+        .close {
+            position: absolute;
+            top:.5em;
+            right:2em;
         }
+        .claim{
+            position: absolute;
+            left: 50%;
+            top: 150px;
+            width:300px;
+            margin-left: -230px;
+            color: $color_primary;
+            font-size: 2em;
+        }
+        .wpcf7{
+          form {
+            background: white;
+            width: 300px !important; 
+            float: right;
+            margin:2em;
+            opacity: 1 !important;
+          }
+        }
+    }
+    &:target .modal-dialog{
+        top:15%;
+    }
+}
+/*** Modal Box Styling ***/
+.modal-dialog{
+    background: white url(../img/bg_modal-form.png) no-repeat bottom left / contain;
+}
