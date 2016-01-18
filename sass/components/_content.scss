@@ -355,7 +355,8 @@ article{
     @include transform(rotate(-12deg));
     @include transform-origin(center top);
     margin-top:1em;
-    div:not(.modal-dialog) & {  
+    .parallax & {  
+        color:#fff !important;
     }
 }
 .question:after{

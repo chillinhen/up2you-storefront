@@ -2110,6 +2110,8 @@ article ul {
   -o-transform-origin: center top;
   transform-origin: center top;
   margin-top: 1em; }
+  .parallax .claim, .parallax .question {
+    color: #fff !important; }
 
 .question:after {
   position: absolute;
@@ -3012,10 +3014,10 @@ video {
       background: white;
       width: 300px !important;
       float: right;
-      margin: 2em;
+      margin: 3em 2em 0 2em;
       opacity: 1 !important; }
   #modalBox:target .modal-dialog {
-    top: 15%; }
+    top: 10%; }
 
 /*** Modal Box Styling ***/
 .modal-dialog {
