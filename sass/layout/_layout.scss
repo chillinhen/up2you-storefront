@@ -176,6 +176,9 @@
 			@include span(full);  
 		}
 	}
+        .page-template-template-erfolgsstories .col-full .content-area{
+            text-align: center;
+        }
 
 	/**
 	 * Footer widgets
@@ -238,17 +241,32 @@
     }
     .social-media{
         @extend %clearfix;
-        li {
-            float: left;
-            display: inline-block;
-            font-size:2em;
-            margin-right:1em;
-            span {
-                display:none;
-                padding:0 .25em;
-                font-weight: normal;
-                color:$color_body;
-                
+        a{
+            i{
+                font-size: 1.6em;
+            }
+        span {
+            display:none;
+            padding:0 .25em;
+            font-weight: normal;
+            color:$color_body;
+        }
+        }
+        .flexbox &{
+            @include align-items(stretch);
+            @include display(flex);
+            @include flex-direction(row);
+            @include justify-content(flex-start);
+            > li {
+                @include flex(1); 
+            }
+        }
+        .no-flex-box &{
+            li {
+                float: left;
+                display: inline-block;
+                font-size:2em;
+                margin-right:1em;
             }
         }
     }

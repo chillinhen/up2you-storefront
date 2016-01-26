@@ -32,6 +32,7 @@ function sf_child_theme_setup() {
 
             function theme_enqueue_scripts() {
                 //wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/bower_components/bootstrap/js/bootstrap.js');
+                wp_enqueue_script('modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js', '2.8.3', true);
                 wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), '1.2', true);
             }
 

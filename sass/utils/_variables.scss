@@ -26,6 +26,15 @@ $success: 			#24929E;
 $info: 				#D875AC;
 $vspacing: 		$base-font-size;
 
+//breakpoints
+$screen-mini: 320px;
+$screen-xs: 480px;
+$screen-maxPhone: 736px;
+$screen-smallPad:600px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+
 $susy: (
 	columns: 12,
 	gutters: 1/3,

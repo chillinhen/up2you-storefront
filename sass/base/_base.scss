@@ -62,23 +62,28 @@ body {
 	}
 }
 .site-header{
-    .col-left{
-        @include span(5 of 12);
-        .site-navigation{
-            @include container;
-            width:100%;
+    @media screen and (min-width:$screen-lg){
+        .col-left{
+            float:left;
+            width:41%;
+            .site-navigation{
+                @include container;
+                width:100%;
+            }
+            padding-top:54px;
         }
-        padding-top:36px;
-    }
-    .col-center{
-        @include span(2 of 12);
-        .logo{
-            margin:0 1em;
+        .col-center{
+            float:left;
+            width:20%;
+            .logo{
+                margin:.5em 0 .5em 1em;
+            }
         }
-    }
-    .col-right{
-        @include span(last 5 of 12);
-        padding-top:36px;
+        .col-right{
+            float:right;
+            width:39%;
+            padding-top:54px;
+        }
     }
 }
 .banner{

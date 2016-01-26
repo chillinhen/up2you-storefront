@@ -50,7 +50,7 @@
         }
     }
     &.alignleft{
-        margin-right: $vspacing;
+        margin-right: 2em;
         @include transform(rotate(-8deg));
         &:before {
             @include transform(scale(-1,1) rotate(24deg));
@@ -59,8 +59,8 @@
         }
     }
     &.alignright{
-        margin-left: $vspacing;
-        @include transform(rotate(5deg));
+        margin-left: 2em;
+        @include transform(rotate(-10deg));
         &:before {
             @include transform(rotate(2deg));
             top:90%;

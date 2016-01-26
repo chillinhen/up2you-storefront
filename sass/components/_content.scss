@@ -23,7 +23,7 @@
     .page-template & {
         padding: 2em 0;
         margin: 2em 0;
-        @include border-style(0 0 2px 0,dotted,$color-light-grey);
+/*        @include border-style(0 0 2px 0,dotted,$color-light-grey);*/
     }
 
     .entry-header {
@@ -356,11 +356,11 @@ article{
     @include transform-origin(center top);
     margin-top:1em;
     .parallax & {  
-        color:#fff !important;
+        color:$color_body !important;
     }
 }
 .question:after{
-        @include bogen(url('../img/bogen-white.svg'));
+        @include bogen(url('../img/bogen.svg'));
         bottom:0;
         right:0;
 }
@@ -368,6 +368,9 @@ body.home article.programme{
     > header{
         position: relative;
         margin-bottom:5em;
+    }
+    &#thumb-50 > header{
+        margin-bottom:7em;
     }
     section {
         .excerpt{
